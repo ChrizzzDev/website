@@ -1,63 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="shortcut icon" href="/img/v-logo.png">
-  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,100,200,500,700|Roboto+Mono:400,300,100,200,500" media="none" onload="if(media!='all')media='all'"><noscript><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,300,100,200,500,700|Roboto+Mono:400,300,100,200,500"></noscript>
-  @css "app.css?43"
-  <!--
-  <script src="tokenizer.js"></script>
-  -->
-  <title>The V Programming Language</title>
-</head>
-<body>
-<div id='app'>
-
-<div class='header'>
-  <div class='flex'></div>
-  <a href='/'><img src='/img/v-logo.png' class='logo' /></a>
-
-  <div class='lang_select' onchange='change_lang(this)'>
-      @{veb.raw(build_tr_menu(ctx.lang))}
-  </div>
-
-
-
-
-  <div class='nav'>
-    <a target=_blank href='https://github.com/vlang/V/tree/master/examples' class='item'>%examples</a>
-    <a target=_blank href='https://docs.vlang.io' class='item'>%documentation</a>
-    <a target=_blank href='https://github.com/vlang/v/blob/master/tutorials' class='item'>%tutorials</a>
-    <a target=_blank href='https://modules.vlang.io' class='item'>Stdlib Docs</a>
-    <a target=_blank href='https://vpm.vlang.io/' class='item'>vpm</a>
-    <a target=_blank href='https://github.com/vlang/v/discussions' class='item'>%forum</a>
-    <a target=_blank href='https://vlang.veery.cc/blog' class='item'>%blog</a>
-    <a target=_blank href='https://play.vlang.io' class='item'>%playground</a>
-	<!--
-    <a target=_blank href='https://v-wasm.now.sh' class='item'>Playground</a>
-    <a href='/#builtinv' class='item'>Built in V</a>
-	-->
-	<!--
-    <a target=_blank href='https://github.com/vlang/v/wiki/FAQ' class='item'>%faq</a>
-    <a target=_blank href='https://github.com/vlang/v/wiki/Backers' class='item'>Backers</a>
-	-->
-  </div>
-  <div class="donate-button">
-    <a target=_blank  href='https://patreon.com/vlang' class='patreon'><img src='/img/patreon.png' /></a> &nbsp;
-    <a target=_blank href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=HRGVJ2LA2LKJ8&item_name=Support+V+development&currency_code=USD&source=url&lc=US" class="paypal">PayPal</a> &nbsp;
-<a target=_blank href='https://github.com/sponsors/medvednikov' class="paypal">GitHub $</a> &nbsp;
-
-<!--
-<a target=_blank href='#' class="paypal" id='btc' onclick="document.getElementById('btcaddr').style.display='inline'; document.getElementById('btc').style.display='none'; return false;">BTC</a>
-<span id='btcaddr' style='display:none'>
-1HZiH6MXkVpaWFwiGVCLAr8WQDBQCMnW3v
-</span>
--->
-	<!--
-	<a target=_blank href='https://github.com/sponsors/medvednikov'><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="93" height="20"><linearGradient id="s" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="r"><rect width="93" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#r)"><rect width="72" height="20" fill="#555"/><rect x="72" width="21" height="20" fill="#9f9f9f"/><rect width="93" height="20" fill="url(#s)"/></g><g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110"><image x="5" y="3" width="14" height="14" xlink:href="data:image/svg+xml;base64,PHN2ZyBmaWxsPSJ3aGl0ZXNtb2tlIiByb2xlPSJpbWciIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+R2l0SHViIGljb248L3RpdGxlPjxwYXRoIGQ9Ik0xMiAuMjk3Yy02LjYzIDAtMTIgNS4zNzMtMTIgMTIgMCA1LjMwMyAzLjQzOCA5LjggOC4yMDUgMTEuMzg1LjYuMTEzLjgyLS4yNTguODItLjU3NyAwLS4yODUtLjAxLTEuMDQtLjAxNS0yLjA0LTMuMzM4LjcyNC00LjA0Mi0xLjYxLTQuMDQyLTEuNjFDNC40MjIgMTguMDcgMy42MzMgMTcuNyAzLjYzMyAxNy43Yy0xLjA4Ny0uNzQ0LjA4NC0uNzI5LjA4NC0uNzI5IDEuMjA1LjA4NCAxLjgzOCAxLjIzNiAxLjgzOCAxLjIzNiAxLjA3IDEuODM1IDIuODA5IDEuMzA1IDMuNDk1Ljk5OC4xMDgtLjc3Ni40MTctMS4zMDUuNzYtMS42MDUtMi42NjUtLjMtNS40NjYtMS4zMzItNS40NjYtNS45MyAwLTEuMzEuNDY1LTIuMzggMS4yMzUtMy4yMi0uMTM1LS4zMDMtLjU0LTEuNTIzLjEwNS0zLjE3NiAwIDAgMS4wMDUtLjMyMiAzLjMgMS4yMy45Ni0uMjY3IDEuOTgtLjM5OSAzLS40MDUgMS4wMi4wMDYgMi4wNC4xMzggMyAuNDA1IDIuMjgtMS41NTIgMy4yODUtMS4yMyAzLjI4NS0xLjIzLjY0NSAxLjY1My4yNCAyLjg3My4xMiAzLjE3Ni43NjUuODQgMS4yMyAxLjkxIDEuMjMgMy4yMiAwIDQuNjEtMi44MDUgNS42MjUtNS40NzUgNS45Mi40Mi4zNi44MSAxLjA5Ni44MSAyLjIyIDAgMS42MDYtLjAxNSAyLjg5Ni0uMDE1IDMuMjg2IDAgLjMxNS4yMS42OS44MjUuNTdDMjAuNTY1IDIyLjA5MiAyNCAxNy41OTIgMjQgMTIuMjk3YzAtNi42MjctNS4zNzMtMTItMTItMTIiLz48L3N2Zz4="/><text x="455" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="450">Sponsor</text><text x="455" y="140" transform="scale(.1)" textLength="450">Sponsor</text><text x="815" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="110">❤</text><text x="815" y="140" transform="scale(.1)" textLength="110">❤</text></g></svg></a>
-	-->
-  </div>
-  <div class='flex'></div>
-</div>
+<!doctype html>
+<html lang="${ctx.lang}" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090b0f" />
+    <meta
+      name="description"
+      content="V is a simple, fast, safe, compiled language for developing maintainable software. Build everything from command-line tools to web apps and operating systems."
+    />
+    <meta
+      property="og:title"
+      content="V — Less complexity. More possibility."
+    />
+    <meta
+      property="og:description"
+      content="A simple, fast, safe language. From a small script to an entire operating system."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://new.vlang.io/img/v-logo.png" />
+    <link rel="icon" href="/img/v-logo.png" />
+    <link rel="stylesheet" href="/app.css?v=20260919-1" />
+    <script src="/app.js?v=20260919-1" defer></script>
+    <title>V — The V Programming Language</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href="/" aria-label="V programming language home"
+        ><img src="/img/v-logo.png" width="30" height="30" alt="" /><span
+          >V<span class="wordmark-caption"
+            >The V Programming Language</span
+          ></span
+        ></a
+      >
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        Menu <span aria-hidden="true">☰</span>
+      </button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="/#features">Language</a>
+        <a href="https://docs.vlang.io">%documentation</a>
+        <a href="/#builtinv">Ecosystem</a>
+        <a href="/#community">Community</a>
+      </nav>
+      <div class="header-actions">
+        <label class="sr-only" for="select_lang">Language</label
+        >@{veb.raw(build_tr_menu(ctx.lang))}<a
+          class="github-link"
+          href="https://github.com/vlang/v"
+          aria-label="V on GitHub"
+          ><svg
+            width="19"
+            height="19"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.09c-3.14.68-3.8-1.33-3.8-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.73 1.16 1.73 1.16 1 .1 1.6 1.79 3.28 1.25.1-.73.39-1.23.72-1.51-2.51-.28-5.15-1.26-5.15-5.59 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.97 0 0 .95-.3 3.08 1.15a10.72 10.72 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.69.12 2.97.72.79 1.15 1.79 1.15 3.02 0 4.34-2.64 5.3-5.16 5.58.4.35.77 1.03.77 2.08v2.79c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"
+            /></svg
+          ><span>GitHub ↗</span></a
+        ><a class="button button-small" href="/#download"
+          >Get V <span aria-hidden="true">↗</span></a
+        >
+      </div>
+    </header>

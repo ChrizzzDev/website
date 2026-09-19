@@ -2,6 +2,9 @@
 
 https://vlang.io
 
+The redesigned site at https://new.vlang.io lives in [`website2_v`](website2_v/README.md).
+See its README for local setup, demo media, content checks, and deployment.
+
 *note: You can't run this site locally, because of proprietary backend, but you can preview the html file `preview.html` for styling css.*
 
 ## How To Contribute

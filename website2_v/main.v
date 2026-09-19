@@ -9,6 +9,7 @@ import veb
 
 const port = 8082
 const visit_cookie_name = 'vlang_session_visit'
+const contact_email = 'alexander@vlang.io'
 
 pub struct App {
 	veb.StaticHandler
@@ -43,19 +44,16 @@ fn main() {
 	mut tracker := traffic.new(traffic.Config{
 		conninfo: conninfo
 		site_id:  'vlang.io'
-	}) or {
-		panic('Could not initialise traffic tracking: ${err}')
-	}
+	}) or { panic('Could not initialise traffic tracking: ${err}') }
 	mut stats_tracker := traffic.new(traffic.Config{
 		conninfo: conninfo
 		site_id:  'vlang.io'
-	}) or {
-		panic('Could not initialise traffic statistics: ${err}')
-	}
+	}) or { panic('Could not initialise traffic statistics: ${err}') }
 	mut app := &App{
 		traffic:       tracker
 		stats_traffic: stats_tracker
 	}
+	app.static_mime_types['.vtt'] = 'text/vtt; charset=utf-8'
 	// app.serve_static('/favicon.ico', 'src/assets/favicon.ico')
 	// makes all static files available.
 	app.mount_static_folder_at(os.resource_abs_path('static'), '/')!
@@ -76,12 +74,8 @@ pub fn (mut app App) index(mut ctx Context) veb.Result {
 		// Crawlers do not reliably retain cookies, so preserve each event while
 		// the tracker keeps it out of the human totals.
 		app.record_home_visit(ctx)
-		return $veb.html('index.html')
-	}
-
-	// Count at most once per browser session so reloading the home page does
-	// not inflate the visit total. The cookie itself is never stored.
-	if ctx.get_cookie(visit_cookie_name) == none {
+	} else if ctx.get_cookie(visit_cookie_name) == none {
+		// Count at most once per browser session. The cookie is never stored.
 		app.record_home_visit(ctx)
 		ctx.set_cookie(http.Cookie{
 			name:      visit_cookie_name
@@ -94,6 +88,17 @@ pub fn (mut app App) index(mut ctx Context) veb.Result {
 	}
 
 	return $veb.html('index.html')
+}
+
+@['/compare']
+pub fn (mut app App) compare(mut ctx Context) veb.Result {
+	ctx.set_lang()
+	return $veb.html('templates/compare.html')
+}
+
+@['/utc_now']
+pub fn (mut app App) utc_now(mut ctx Context) veb.Result {
+	return ctx.text(time.now().unix().str())
 }
 
 @['/stats228']
@@ -120,9 +125,7 @@ fn (mut app App) record_home_visit(ctx Context) {
 		referer:    ctx.get_header(.referer) or { '' }
 		user_agent: ctx.req.header.get(.user_agent) or { '' }
 		country:    ctx.get_custom_header('CF-IPCountry') or { '' }
-	}) or {
-		eprintln('Could not record page visit: ${err}')
-	}
+	}) or { eprintln('Could not record page visit: ${err}') }
 }
 
 pub fn (mut ctx Context) set_lang() {
@@ -130,13 +133,12 @@ pub fn (mut ctx Context) set_lang() {
 }
 
 fn build_tr_menu(cur_lang Lang) string {
-	println('BUILD TR ${cur_lang}')
 	// mut sb := strings.new_builder()
 	// sb.write_string('<select>')
 	// TODO loop when >2 langs
 	s := '<select id=select_lang>' +
-		'<option value=en ${if cur_lang == .en { 'selected' } else { '' }}>English</option>' +
-		'<option value=ru ${if cur_lang == .ru { 'selected' } else { '' }}>Русский</option></select>'
+		'<option value=en ${if cur_lang == .en { 'selected' } else { '' }}>EN</option>' +
+		'<option value=ru ${if cur_lang == .ru { 'selected' } else { '' }}>РУ</option></select>'
 	/*
 	s := match cur_lang {
 		.ru { 'English' }
@@ -147,10 +149,19 @@ fn build_tr_menu(cur_lang Lang) string {
 }
 
 @['/change_lang/:lang'; post]
-pub fn (mut app App) change_lang(lang string) veb.Result {
-	println('CHANGING LANG ${lang}')
+pub fn (mut app App) change_lang(mut ctx Context, lang string) veb.Result {
+	selected_lang := Lang.from_string(lang) or {
+		ctx.res.set_status(.bad_request)
+		return ctx.json('Unsupported language')
+	}
 	expire_date := time.now().add_days(400)
-	ctx.set_cookie(name: 'lang', value: lang, path: '/', expires: expire_date)
+	ctx.set_cookie(
+		name:      'lang'
+		value:     selected_lang.str()
+		path:      '/'
+		expires:   expire_date
+		same_site: .same_site_lax_mode
+	)
 	// return ctx.redirect('/')
 	return ctx.json('ok')
 }
