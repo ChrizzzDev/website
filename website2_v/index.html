@@ -86,6 +86,12 @@
     aria-label="V in action"
     aria-roledescription="carousel"
   >
+    <img
+      class="showcase-veasel"
+      src="/img/veasel.png"
+      alt=""
+      aria-hidden="true"
+    />
     <div class="demo-stage">
       <article
         class="demo-slide is-active"
@@ -197,6 +203,43 @@
       </article>
       <article
         class="demo-slide"
+        id="demo-veb-reload"
+        role="tabpanel"
+        aria-labelledby="tab-veb-reload"
+        data-duration="14000"
+        hidden
+      >
+        <div class="media-scene">
+          <div
+            class="demo-media veb-reload-preview"
+            role="img"
+            aria-label="Preview placeholder for a Veb browser live-reload demonstration video"
+          >
+            <div class="veb-browser-bar">
+              <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span
+              ><span>localhost:8080</span><span class="veb-browser-status">LIVE</span>
+            </div>
+            <div class="veb-browser-page">
+              <span class="veb-reload-wip">Demo video in progress</span>
+              <strong>Changes appear<br />right away.</strong>
+              <span class="veb-browser-line"></span>
+              <span class="veb-browser-line short"></span>
+              <span class="veb-browser-update">Updated after save</span>
+            </div>
+          </div>
+          <div class="media-caption">
+            <span class="eyebrow">Veb · Browser live reload</span>
+            <h2>Save the code.<br />See the website.</h2>
+            <p>
+              Running websites refresh instantly in the browser after every
+              save. No compiling, rerunning, or manual browser refreshes.
+            </p>
+            <code class="demo-command">v -d veb_livereload watch run .</code>
+          </div>
+        </div>
+      </article>
+      <article
+        class="demo-slide"
         id="demo-native"
         role="tabpanel"
         aria-labelledby="tab-native"
@@ -299,6 +342,16 @@
       </button>
       <button
         role="tab"
+        id="tab-veb-reload"
+        aria-controls="demo-veb-reload"
+        aria-selected="false"
+        tabindex="-1"
+      >
+        <span>Instant Veb browser reload</span
+        ><span class="tab-progress"></span>
+      </button>
+      <button
+        role="tab"
         id="tab-native"
         aria-controls="demo-native"
         aria-selected="false"
@@ -325,20 +378,6 @@
 @include 'templates/resources.html'
 
 @include 'templates/sponsors.html'
-
-
-  <section class="closing-section">
-    <p class="eyebrow">The next thing you build</p>
-    <h2>Make it with V.</h2>
-    <p>Less between you and your next idea.</p>
-    <div class="hero-actions">
-      <a class="button button-primary" href="#examples"
-        >Get started <span aria-hidden="true">↗</span></a
-      ><a class="button button-secondary" href="https://github.com/vlang/v"
-        >Explore the source <span aria-hidden="true">↗</span></a
-      >
-    </div>
-  </section>
 </main>
 
 @include 'templates/footer.html'
