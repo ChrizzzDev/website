@@ -1,17 +1,24 @@
 module main
 
-import veb
-// import databases
+import net.http
 import os
+import sync
 import time
+import traffic
+import veb
 
 const port = 8082
+const visit_cookie_name = 'vlang_session_visit'
 
 pub struct App {
 	veb.StaticHandler
+mut:
+	traffic       &traffic.Tracker
+	stats_traffic &traffic.Tracker
+	traffic_lock  sync.Mutex
 }
 
-struct Context {
+pub struct Context {
 	veb.Context
 mut:
 	lang Lang
@@ -32,18 +39,23 @@ enum Lang {
 //}
 
 fn main() {
-	/*
-	mut db := databases.create_db_connection() or { panic(err) }
-
-	sql db {
-		create table User
-		create table Product
-	} or { panic('error on create table: ${err}') }
-
-	db.close() or { panic(err) }
-
-	*/
-	mut app := &App{}
+	conninfo := os.getenv('VLANG_DB_CONNINFO')
+	mut tracker := traffic.new(traffic.Config{
+		conninfo: conninfo
+		site_id:  'vlang.io'
+	}) or {
+		panic('Could not initialise traffic tracking: ${err}')
+	}
+	mut stats_tracker := traffic.new(traffic.Config{
+		conninfo: conninfo
+		site_id:  'vlang.io'
+	}) or {
+		panic('Could not initialise traffic statistics: ${err}')
+	}
+	mut app := &App{
+		traffic:       tracker
+		stats_traffic: stats_tracker
+	}
 	// app.serve_static('/favicon.ico', 'src/assets/favicon.ico')
 	// makes all static files available.
 	app.mount_static_folder_at(os.resource_abs_path('static'), '/')!
@@ -57,11 +69,60 @@ fn main() {
 	veb.run[App, Context](mut app, port)
 }
 
-pub fn (mut app App) index() veb.Result {
+pub fn (mut app App) index(mut ctx Context) veb.Result {
 	ctx.set_lang() // TODO use middleware
-	title := 'vweb app'
+	user_agent := ctx.req.header.get(.user_agent) or { '' }
+	if traffic.is_bot_request(user_agent, ctx.req.url) {
+		// Crawlers do not reliably retain cookies, so preserve each event while
+		// the tracker keeps it out of the human totals.
+		app.record_home_visit(ctx)
+		return $veb.html('index.html')
+	}
 
-	return $veb.html()
+	// Count at most once per browser session so reloading the home page does
+	// not inflate the visit total. The cookie itself is never stored.
+	if ctx.get_cookie(visit_cookie_name) == none {
+		app.record_home_visit(ctx)
+		ctx.set_cookie(http.Cookie{
+			name:      visit_cookie_name
+			value:     '1'
+			path:      '/'
+			secure:    true
+			http_only: true
+			same_site: .same_site_lax_mode
+		})
+	}
+
+	return $veb.html('index.html')
+}
+
+@['/stats228']
+pub fn (mut app App) stats228(mut ctx Context) veb.Result {
+	return ctx.html(app.stats_traffic.stats_html(ctx.req.url, traffic.PageConfig{
+		site_name:  'V'
+		page_title: 'V traffic statistics'
+		home_url:   '/'
+		stats_path: '/stats228'
+	}))
+}
+
+fn (mut app App) record_home_visit(ctx Context) {
+	// Veb serves requests concurrently, while each tracker owns one PostgreSQL
+	// connection. Traffic collection must never hold up page delivery.
+	if !app.traffic_lock.try_lock() {
+		return
+	}
+	defer {
+		app.traffic_lock.unlock()
+	}
+	app.traffic.record(traffic.Request{
+		url:        ctx.req.url
+		referer:    ctx.get_header(.referer) or { '' }
+		user_agent: ctx.req.header.get(.user_agent) or { '' }
+		country:    ctx.get_custom_header('CF-IPCountry') or { '' }
+	}) or {
+		eprintln('Could not record page visit: ${err}')
+	}
 }
 
 pub fn (mut ctx Context) set_lang() {

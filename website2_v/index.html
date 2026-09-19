@@ -253,11 +253,11 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
 
 <a class='book' href='https://www.amazon.com/gp/product/1839213434' target='_blank'>
 	 <img style='width:155px' src='/img/book.jpg'> <br>
-	 %book1
+	 @{veb.tr(ctx.lang.str(), 'book1')}
 	 </a>
 <a class='book' style='top: 280px;' href='https://novapublishers.com/shop/randomness-revisited-using-the-v-programming-language' target='_blank'>
 	 <img style='width:155px' src='/img/book2.jpg'> <br>
-	 %book2
+	 @{veb.tr(ctx.lang.str(), 'book2')}
 	 </a>
 
 <div class='examples'>
@@ -272,8 +272,8 @@ if (macosPlatforms.indexOf(platform) !== -1 || iosPlatforms.indexOf(platform) !=
     2areas := [&#39;game&#39;, &#39;web&#39;, &#39;tools&#39;, &#39;science&#39;, &#39;systems&#39;,
               &#39;embedded&#39;, &#39;drivers&#39;, &#39;GUI&#39;, &#39;mobile&#39;]
     for area2 in areas {
-        println(&#39;Hello, ${area} developers!&#39;)
-    }
+        println(&#39;Hello, &#36;{area} developers!&#39;)
+    &#125;
 }</pre>
 <pre class="hello_devs" id=ex2 style='display:none'>
 // Print file lines that start with "DEBUG:"
@@ -283,16 +283,16 @@ import os
 text := os.read_file('app.log') or {
     // `err` is a special variable that contains the error
     // in `or {}` blocks
-    eprintln('failed to read the file: ${err}')
+    eprintln('failed to read the file: &#36;{err}')
     return
-}
+&#125;
 
 lines := text.split_into_lines()
 for line in lines {
     if line.starts_with('DEBUG:') {
         println(line)
-    }
-}
+    &#125;
+&#125;
 </pre>
   <pre class="hello_devs" id=ex3 style='display:none'>
 import time
@@ -300,7 +300,7 @@ import net.http
 resp := http.get('https://vlang.io/utc_now') or {
     println('failed to fetch data from the server')
     return
-}
+&#125;
 t := time.unix(resp.body.int())
 println(t.format()) // 2019-08-16 17:48
 </pre>
@@ -312,40 +312,40 @@ struct User {
     age  int
 mut:
     is_registered bool
-}
+&#125;
 
 fn main() {
     s := '[{"name":"Frodo", "age":25}, {"name":"Bobby", "age":10}]'
     mut users := json.decode([]User, s) or {
         eprintln('Failed to parse json')
         return
-    }
+    &#125;
     for user in users {
-        println('${user.name}: ${user.age}')
-    }
+        println('&#36;{user.name}: &#36;{user.age}')
+    &#125;
     println('')
     for i, mut user in users {
-        println('${i}) ${user.name}')
+        println('&#36;{i}) &#36;{user.name}')
         if !user.can_register() {
-            println('Cannot register ${user.name}, they are too young')
+            println('Cannot register &#36;{user.name}, they are too young')
             continue
-        }
+        &#125;
 		// `user` is declared as `mut` in the for loop,
 		// modifying it will modify the array
         user.register()
-    }
+    &#125;
     // Let's encode users again just for fun
     println('')
     println(json.encode(users))
-}
+&#125;
 
 fn (u User) can_register() bool {
     return u.age >= 16
-}
+&#125;
 
 fn (mut u User) register() {
     u.is_registered = true
-}
+&#125;
 
   </pre>
 
@@ -423,7 +423,7 @@ next();
 function tokenize_codeblock_99404097 (e) {
   Tokenizer(e.target.value).then(function(tokens) {
     document.getElementById("codeblock_hl_04227451").innerHTML = tokens
-      .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
+      .map(function(token) { return "<span class='" + token.type + "'>" + token.value + '</span>' })
       .join('')
   })
 }
@@ -668,7 +668,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
     <div class="container">
 
     <div class="block vreview">
-   		%v_review_1
+		@{veb.tr(ctx.lang.str(), 'v_review_1')}
 
 	  <div>
 	    <a target=_blank href='https://discord.com/channels/592103645835821068/592842126304477184/1290363788322799628'>BrunoVDR</a>
@@ -676,7 +676,7 @@ document.getElementById("codeblock_rb_13318017").onclick = function(e) {
 	</div>
 
     <div class="block vreview">
-   %v_review_2
+   @{veb.tr(ctx.lang.str(), 'v_review_2')}
 
 	  <div>
 	    <a target=_blank href='https://github.com/vlang/v/discussions/7610#discussioncomment-9486329'>Joel L.</a>
@@ -694,7 +694,7 @@ Even to the point I'm now looking at making a small ...
  <-- contribution to the language, something I've never done before. IMO, learning  V was a great decision.->
 -->
 
-%v_review_3
+@{veb.tr(ctx.lang.str(), 'v_review_3')}
 
 	  <div>
 	    <a target=_blank href='https://discord.com/channels/592103645835821068/592106336838352923/1144221785592709181'>FlibbyJibbit</a>
@@ -1229,7 +1229,7 @@ The advantage of using V for this is the simplicity and predictability of the la
 </p>
       <pre style="margin-right: 36px">for file in ls('build/') {
   rm(file)
-}
+&#125;
 mv('v.exe', 'build/')
 
 v run deploy.vsh</pre>
@@ -1300,7 +1300,7 @@ fn get_string() string { return 'hello' }
 
 fn test_get_string() {
   assert get_string() == 'hello'
-}
+&#125;
       <p>
       </div>
 
@@ -1337,13 +1337,13 @@ user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provi
 fn (b &Blog) show_post(id int) veb.Result {
   post := b.posts_repo.retrieve(id) or {
     return veb.not_found()
-  }
+  &#125;
   return veb.view(post)
 }</div><textarea spellCheck="false" id="codeblock_ta_15447927" class="">[&#39;/post/:id&#39;]
 fn (b &Blog) show_post(id int) veb.Result {
   post := b.posts_repo.retrieve(id) or {
     return veb.not_found()
-  }
+  &#125;
   return veb.view(post)
 }</textarea></pre>
 </div>
@@ -1353,7 +1353,7 @@ fn (b &Blog) show_post(id int) veb.Result {
 function tokenize_codeblock_12828032 (e) {
   Tokenizer(e.target.value).then(function(tokens) {
     document.getElementById("codeblock_hl_93987704").innerHTML = tokens
-      .map(function(token) { return `<span class='${token.type}'>${token.value}</span>` })
+      .map(function(token) { return "<span class='" + token.type + "'>" + token.value + '</span>' })
       .join('')
   })
 }
@@ -1397,17 +1397,17 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
   name <span class="keyword">string</span>
   nr_orders <span class="keyword">int</span>
   country <span class="keyword">string</span>
-}
+&#125;
 
 <span class="keyword">fn</span> main() {
   db := sqlite.connect(<span class="string">'example.sqlite'</span>) <span class="keyword">or</span> {
     panic(<span class="string">'could not create/find example.sqlite'</span>)
-  }
+  &#125;
 
   nr_customers := <span class="keyword">sql</span> db {
     <span class="keyword">select</span> count <span class="keyword">from</span> Customer
   }!
-  println(<span class="string">'number of customers: ${nr_customers}'</span>)
+  println(<span class="string">'number of customers: &#36;{nr_customers}'</span>)
 
   <span class="comment">// V syntax can be used to build queries</span>
   uk_customers := <span class="keyword">sql</span> db {
@@ -1415,8 +1415,8 @@ document.getElementById("codeblock_rb_06463216").onclick = function(e) {
   }!
 
   <span class="keyword">for</span> customer <span class="keyword">in</span> uk_customers {
-    println(<span class="string">'${customer.id} - ${customer.name}'</span>)
-  }
+    println(<span class="string">'&#36;{customer.id} - &#36;{customer.name}'</span>)
+  &#125;
 
   <span class="comment">// by adding `limit 1` we tell V that there will be</span>
   <span class="comment">// only one object</span>
