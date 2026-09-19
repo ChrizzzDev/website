@@ -810,13 +810,33 @@ li code {
   transform-origin: left;
 }
 .media-scene {
+  position: relative;
   display: grid;
   grid-template-columns: 1.65fr 1fr;
   align-items: center;
   gap: 42px;
   height: 100%;
   padding: 35px 42px;
+  overflow: hidden;
   background: radial-gradient(ellipse at 80% 80%, #273e5b65, transparent 70%);
+}
+.media-scene:not(.self-compilation-scene)::before {
+  content: "";
+  position: absolute;
+  inset: auto -150px -500px auto;
+  z-index: 0;
+  width: 1000px;
+  height: 680px;
+  border: 1px solid #a6c6f415;
+  border-radius: 50%;
+  transform: rotate(-24deg);
+  box-shadow:
+    0 -15px 60px #79a8f309,
+    0 -1px 0 #a6c6f40d;
+}
+.media-scene:not(.self-compilation-scene) > * {
+  position: relative;
+  z-index: 1;
 }
 .demo-media {
   position: relative;
