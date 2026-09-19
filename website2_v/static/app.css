@@ -774,7 +774,6 @@ li code {
   display: flex;
   align-items: flex-start;
   text-align: left;
-  gap: 10px;
   padding: 20px 15px;
   border: 0;
   border-right: 1px solid #ffffff0a;
@@ -794,19 +793,6 @@ li code {
 .demo-tabs button:hover {
   color: white;
   background: #1a263766;
-}
-.tab-number {
-  font-family: var(--mono);
-  font-size: 9px;
-  color: #6c7e95;
-  line-height: 1.9;
-}
-.demo-tabs small {
-  display: block;
-  font-size: 9px;
-  font-weight: 400;
-  color: #8a95a6;
-  margin-top: 4px;
 }
 .tab-progress {
   position: absolute;
@@ -875,6 +861,10 @@ li code {
   color: #9daabe;
   font-size: 12px;
   margin: 18px 0;
+}
+.self-compilation-caption.media-caption > p:not(.eyebrow) {
+  font-size: 16px;
+  line-height: 1.6;
 }
 .media-caption .eyebrow {
   display: block;
@@ -1021,10 +1011,17 @@ li code {
 }
 .example-layout {
   display: grid;
-  grid-template-columns: 0.7fr 1.3fr;
-  gap: 90px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
   margin-top: 40px;
   align-items: start;
+}
+.example-layout .window-bar select {
+  max-width: 152px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  color: #c7d8ed;
+  font-size: 9px;
 }
 .example-intro {
   padding-top: 22px;
@@ -1667,11 +1664,7 @@ li code {
   }
   .demo-tabs button {
     padding: 17px 10px;
-    gap: 7px;
     font-size: 10px;
-  }
-  .demo-tabs small {
-    font-size: 8px;
   }
   .download-section {
     gap: 50px;
@@ -1815,9 +1808,6 @@ li code {
     flex: 1 0 150px;
     padding: 17px 15px;
     font-size: 10px;
-  }
-  .demo-tabs small {
-    font-size: 8px;
   }
   .media-scene {
     grid-template-columns: 1.2fr 1fr;
