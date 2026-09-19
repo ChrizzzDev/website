@@ -205,7 +205,6 @@ li code {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  border-bottom: 1px solid #ffffff0b;
   position: relative;
   z-index: 20;
 }
@@ -232,7 +231,7 @@ li code {
   display: flex;
   align-items: center;
   gap: 29px;
-  font-size: 12px;
+  font-size: 15px;
   color: #a9afba;
 }
 .main-nav a:hover {
@@ -335,7 +334,7 @@ li code {
 }
 .hero {
   text-align: center;
-  padding: 66px 20px 45px;
+  padding: 14px 20px 45px;
   position: relative;
 }
 .hero::before {
@@ -377,7 +376,7 @@ li code {
   font-weight: 500;
   line-height: 1.04;
   letter-spacing: -0.06em;
-  margin: 27px 0 22px;
+  margin: 10px 0 22px;
 }
 .hero h1 > span {
   color: #91a9c9;
@@ -391,6 +390,123 @@ li code {
   line-height: 1.7;
   color: #a0a8b5;
   letter-spacing: -0.01em;
+}
+.hero-download-actions {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 26px;
+}
+.hero-download {
+  display: flex;
+  min-width: 0;
+  height: 52px;
+}
+.hero-download-main,
+.hero-github {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.hero-download-main {
+  gap: 10px;
+  padding: 0 22px;
+  border: 1px solid #528fd4;
+  border-radius: 10px 0 0 10px;
+  background: #467fc2;
+  color: #fff;
+}
+.hero-download-main:hover {
+  color: #fff;
+  background: #538bcd;
+}
+.hero-download-main svg {
+  width: 19px;
+  height: 24px;
+}
+.hero-download-main small {
+  margin-left: 8px;
+  color: #d5e7ff;
+  font-size: 12px;
+  font-weight: 600;
+}
+.hero-download-menu {
+  position: relative;
+}
+.hero-download-menu summary {
+  display: grid;
+  width: 54px;
+  height: 52px;
+  place-items: center;
+  list-style: none;
+  border: 1px solid #6397d3;
+  border-radius: 0 10px 10px 0;
+  background: #467fc2;
+  color: #e4f0ff;
+  cursor: pointer;
+}
+.hero-download-menu summary::-webkit-details-marker {
+  display: none;
+}
+.hero-download-menu summary span {
+  font-size: 25px;
+  line-height: 1;
+  transform: translateY(-2px);
+}
+.hero-download-menu[open] summary span {
+  transform: translateY(2px) rotate(180deg);
+}
+.hero-download-list {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 254px;
+  padding: 7px;
+  border: 1px solid #425066;
+  border-radius: 8px;
+  background: #141b25;
+  box-shadow: 0 20px 50px #0009;
+  text-align: left;
+}
+.hero-download-list a {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+.hero-download-list a:hover {
+  background: #25364c;
+}
+.hero-download-list span {
+  color: #8f9bac;
+  font-size: 11px;
+}
+.hero-github {
+  gap: 9px;
+  padding: 0 21px;
+  border: 1px solid #3b4656;
+  border-radius: 10px;
+  background: #12161c;
+  color: #edf0f5;
+}
+.hero-github:hover {
+  border-color: #647286;
+  background: #171d25;
+  color: #fff;
+}
+.hero-github svg {
+  width: 20px;
+  height: 20px;
+}
+.hero-github small {
+  color: #8f9bab;
+  font-size: 12px;
+  font-weight: 600;
 }
 .hero-actions {
   display: flex;
@@ -702,13 +818,6 @@ li code {
   transform: scaleX(0);
   transform-origin: left;
 }
-.showcase-note {
-  display: flex;
-  justify-content: space-between;
-  margin: 15px 3px 0;
-  font-size: 10px;
-  color: #7f8b9c;
-}
 .media-scene {
   display: grid;
   grid-template-columns: 1.65fr 1fr;
@@ -783,22 +892,6 @@ li code {
   margin: 16px 0;
   color: #b8d3f3;
   background: #111925;
-}
-.capabilities-strip {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 15px;
-  padding: 36px 0 35px;
-  border-bottom: 1px solid var(--line);
-  margin-bottom: 0;
-  font-size: 11px;
-  color: #8591a1;
-}
-.capabilities-strip span::before {
-  content: "✳";
-  margin-right: 10px;
-  color: #7b94b2;
 }
 .section-heading {
   display: flex;
@@ -1524,7 +1617,7 @@ li code {
 }
 @media (min-width: 1500px) {
   .hero {
-    padding-top: 85px;
+    padding-top: 25px;
   }
   .demo-stage {
     height: 470px;
@@ -1655,7 +1748,7 @@ li code {
     gap: 10px;
   }
   .hero {
-    padding-top: 48px;
+    padding-top: 18px;
   }
   .hero h1 {
     font-size: 62px;
@@ -1924,7 +2017,7 @@ li code {
     width: calc(100% - 36px);
   }
   .hero {
-    padding: 39px 18px 33px;
+    padding: 14px 18px 33px;
   }
   .release-link {
     font-size: 9px;
@@ -1933,13 +2026,34 @@ li code {
   .hero h1 {
     font-size: clamp(44px, 11.3vw, 60px);
     line-height: 1.07;
-    margin: 25px 0 19px;
+    margin: 10px 0 19px;
   }
   .hero-description {
     font-size: 12px;
     max-width: 330px;
     margin: auto;
     line-height: 1.8;
+  }
+  .hero-download-actions {
+    gap: 9px;
+    margin-top: 20px;
+  }
+  .hero-download-main {
+    gap: 8px;
+    padding-inline: 14px;
+    font-size: 12px;
+  }
+  .hero-download-main small,
+  .hero-github small {
+    font-size: 10px;
+  }
+  .hero-download-menu summary {
+    width: 45px;
+  }
+  .hero-github {
+    gap: 7px;
+    padding-inline: 14px;
+    font-size: 12px;
   }
   .desktop-break {
     display: none;

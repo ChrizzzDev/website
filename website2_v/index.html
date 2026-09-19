@@ -13,7 +13,7 @@
 	<!--
       Simple, fast, safe, compiled.
 	  -->
-	  The V Programming language
+      The V Programming language <span>0.5</span>
 
 <!--
 <br />
@@ -30,16 +30,55 @@
       From a small script to an entire operating system.
 	  -->
     </p>
-    <div class="hero-actions">
-      <a class="button button-primary" href="#download"
-        >Start building <span aria-hidden="true">↗</span></a
-      ><a class="button button-secondary" href="https://play.vlang.io"
-        >Try in your browser <span aria-hidden="true">→</span></a
+    <div class="hero-download-actions">
+      <a
+        class="hero-github"
+        href="https://github.com/vlang/v"
+        target="_blank"
+        rel="noopener noreferrer"
       >
+        <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+          <path
+            fill="currentColor"
+            d="M8 0a8 8 0 0 0-2.53 15.59c.4.07.55-.17.55-.38v-1.49c-2.01.44-2.43-.85-2.43-.85-.33-.84-.8-1.06-.8-1.06-.55-.38.04-.37.04-.37.61.04.93.63.93.63.54.93 1.42.66 1.76.5.06-.39.21-.66.38-.81-1.61-.18-3.3-.8-3.3-3.59 0-.79.28-1.44.75-1.95-.08-.18-.33-.92.07-1.92 0 0 .61-.2 2 .75A6.9 6.9 0 0 1 8 4.92c.61 0 1.22.08 1.79.24 1.39-.95 2-.75 2-.75.4 1 .15 1.74.07 1.92.47.51.75 1.16.75 1.95 0 2.8-1.7 3.4-3.31 3.58.22.19.42.55.42 1.11v1.65c0 .21.14.45.55.38A8 8 0 0 0 8 0Z"
+          />
+        </svg>
+        <span>GitHub</span><small>★ 38k</small>
+      </a>
+      <div class="hero-download">
+        <a
+          class="hero-download-main"
+          href="https://github.com/vlang/v/releases/latest/download/v_macos_arm64.zip"
+        >
+          <svg viewBox="0 0 384 512" aria-hidden="true" focusable="false">
+            <path
+              fill="currentColor"
+              d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-25.6 71.9 0 71.9 26.1 2 49.9-11.4 67.9-34.3z"
+            />
+          </svg>
+          <span>macOS (Apple Silicon)</span>
+          <small>11.4 MB</small>
+        </a>
+        <details class="hero-download-menu">
+          <summary aria-label="More V download options">
+            <span aria-hidden="true">⌄</span>
+          </summary>
+          <div class="hero-download-list">
+            <a href="https://github.com/vlang/v/releases/latest/download/v_macos_arm64.zip"
+              >macOS <span>Apple Silicon</span></a
+            ><a href="https://github.com/vlang/v/releases/latest/download/v_macos_x86_64.zip"
+              >macOS <span>Intel</span></a
+            ><a href="https://github.com/vlang/v/releases/latest/download/v_linux.zip"
+              >Linux <span>x86_64</span></a
+            ><a href="https://github.com/vlang/v/releases/latest/download/v_windows.zip"
+              >Windows <span>x86_64</span></a
+            ><a href="https://github.com/vlang/v/blob/master/doc/docs.md#install-from-source"
+              >Build from source <span>↗</span></a
+            >
+          </div>
+        </details>
+      </div>
     </div>
-    <p class="hero-footnote">
-      Open source. Compiles to native code. A joy to write.
-    </p>
   </section>
 
   <section
@@ -47,84 +86,35 @@
     aria-label="V in action"
     aria-roledescription="carousel"
   >
-    <div class="showcase-topline">
-      <span><span class="status-dot"></span> LESS WAITING. MORE CREATING.</span>
-      <div class="showcase-controls">
-        <span id="demo-count" aria-live="off">01 / 05</span
-        ><button
-          type="button"
-          id="demo-toggle"
-          aria-label="Pause automatic demos"
-          aria-pressed="false"
-        >
-          <span aria-hidden="true">Ⅱ</span></button
-        ><button type="button" id="demo-prev" aria-label="Previous demo">
-          ←</button
-        ><button type="button" id="demo-next" aria-label="Next demo">→</button>
-      </div>
-    </div>
     <div class="demo-stage">
       <article
         class="demo-slide is-active"
         id="demo-compile"
         role="tabpanel"
         aria-labelledby="tab-compile"
-        data-duration="12000"
+        data-duration="25000"
       >
-        <div class="compile-scene">
-          <div class="terminal-window">
-            <div class="window-bar">
-              <span class="window-dots" aria-hidden="true"
-                ><i></i><i></i><i></i></span
-              ><span>v — zsh</span><span class="window-language">macOS</span>
-            </div>
-            <div class="terminal-content">
-              <div class="terminal-comment">
-                # A compiler written in its own language.
-              </div>
-              <div class="terminal-command">
-                <span class="prompt">~/v ❯</span>
-                <span id="typed-command">time v self</span
-                ><span class="cursor" aria-hidden="true"></span>
-              </div>
-              <div class="terminal-output">
-                <p>V is building V.</p>
-                <p class="terminal-success">✓ Compiler rebuilt successfully</p>
-                <div class="terminal-time">
-                  <span>real</span><strong id="compile-time">&lt; 1s</strong>
-                </div>
-                <p class="terminal-comment">
-                  # Back to building something great.
-                </p>
-                <p>
-                  <span class="prompt">~/v ❯</span>
-                  <span class="cursor" aria-hidden="true"></span>
-                </p>
-              </div>
-            </div>
-            <div class="terminal-footer">
-              <span>Illustrated workflow</span
-              ><span>V → V <span class="terminal-success">↗</span></span>
-            </div>
+        <div class="media-scene self-compilation-scene">
+          <div class="demo-media">
+            <video
+              src="/img/self-compilation.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              aria-label="V 0.4.8 compiling itself in 0.48 seconds on a MacBook Air M3"
+            ></video>
           </div>
-          <div class="compile-callout">
-            <p class="eyebrow">The entire compiler.</p>
-            <div class="speed-number">&lt;1<span>s</span></div>
-            <h2>Done before<br />you lose your thought.</h2>
+          <div class="media-caption">
+            <h2>Ultra fast compilation speed</h2>
             <p>
-              Subsecond self-compilation.<br /><a
-                href="https://x.com/v_language/status/1802982846551773225"
-                >0.33s on a MacBook Air M3 ↗</a
-              >
+              V compiles ≈10k (Clang backend) and ≈700k (arm64 and tcc
+              backends) lines of code per second.<br />(Apple M5, no
+              optimization)
             </p>
-            <a
-              class="text-link"
-              href="/img/buildv.mp4"
-              data-local-video="/img/buildv.mp4"
-              >Watch the macOS recording <span aria-hidden="true">▶</span></a
-            >
+            <p>V is written in V and compiles itself in 0.5 seconds on M3.</p>
           </div>
-          <div class="scene-orbit" aria-hidden="true"></div>
         </div>
       </article>
       <article
@@ -333,81 +323,7 @@
         ><span class="tab-progress"></span>
       </button>
     </div>
-    <p class="showcase-note">
-      <span>Real tools. Real possibilities.</span
-      ><a href="https://www.youtube.com/c/VLang/videos"
-        >More V in action <span aria-hidden="true">↗</span></a
-      >
-    </p>
   </section>
-
-  <div class="capabilities-strip" aria-label="V at a glance">
-    <span>Native performance</span><span>Fast compilation</span
-    ><span>Safe by default</span><span>Built-in tooling</span
-    ><span>C interoperability</span>
-  </div>
-
-  <section class="section-wrap download-section" id="download">
-    <div class="download-intro">
-      <p class="eyebrow">From zero to hello.</p>
-      <h2>A few seconds.<br />A fresh start.</h2>
-      <p>
-        Get the latest V from source.<br />A small compiler. A whole world to
-        build.
-      </p>
-      <div class="download-options">
-        <details class="download-menu">
-          <summary class="button button-primary">
-            Download V <span aria-hidden="true">↓</span>
-          </summary>
-          <div class="download-list">
-            <a
-              href="https://github.com/vlang/v/releases/latest/download/v_macos_arm64.zip"
-              >macOS <span>Apple Silicon</span></a
-            ><a
-              href="https://github.com/vlang/v/releases/latest/download/v_macos_x86_64.zip"
-              >macOS <span>Intel</span></a
-            ><a
-              href="https://github.com/vlang/v/releases/latest/download/v_linux.zip"
-              >Linux <span>x86_64</span></a
-            ><a
-              href="https://github.com/vlang/v/releases/latest/download/v_windows.zip"
-              >Windows <span>x86_64</span></a
-            ><a
-              href="https://github.com/vlang/v/blob/master/doc/docs.md#install-from-source"
-              >Build from source ↗</a
-            >
-          </div>
-        </details>
-        <a href="https://docs.vlang.io" class="text-link">Read the docs ↗</a>
-      </div>
-      <p class="small">macOS · Linux · Windows · BSD</p>
-    </div>
-    <div class="install-window code-window">
-      <div class="window-bar">
-        <span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span
-        ><span>Install V from source</span
-        ><button
-          type="button"
-          class="copy-button"
-          data-copy="install-code"
-          aria-label="Copy installation commands"
-        >
-          Copy ⧉
-        </button>
-      </div>
-      <pre id="install-code">
-git clone --depth=1 https://github.com/vlang/v
-cd v
-make</pre>
-      <div class="install-hint">
-        On Windows, run <code>make.bat</code> instead of
-        <code>make</code>.<br />Then try
-        <code>./v run examples/hello_world.v</code>.
-      </div>
-    </div>
-  </section>
-
 
 @include 'templates/content.html'
 
