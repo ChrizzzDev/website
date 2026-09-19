@@ -14,8 +14,8 @@ const contact_email = 'alexander@vlang.io'
 pub struct App {
 	veb.StaticHandler
 mut:
-	traffic       &traffic.Tracker
-	stats_traffic &traffic.Tracker
+	traffic       &traffic.Tracker = unsafe { nil }
+	stats_traffic &traffic.Tracker = unsafe { nil }
 	traffic_lock  sync.Mutex
 }
 
@@ -41,17 +41,19 @@ enum Lang {
 
 fn main() {
 	conninfo := os.getenv('VLANG_DB_CONNINFO')
-	mut tracker := traffic.new(traffic.Config{
-		conninfo: conninfo
-		site_id:  'vlang.io'
-	}) or { panic('Could not initialise traffic tracking: ${err}') }
-	mut stats_tracker := traffic.new(traffic.Config{
-		conninfo: conninfo
-		site_id:  'vlang.io'
-	}) or { panic('Could not initialise traffic statistics: ${err}') }
 	mut app := &App{
-		traffic:       tracker
-		stats_traffic: stats_tracker
+	}
+	if conninfo != '' {
+		app.traffic = traffic.new(traffic.Config{
+			conninfo: conninfo
+			site_id:  'vlang.io'
+		}) or { panic('Could not initialise traffic tracking: ${err}') }
+		app.stats_traffic = traffic.new(traffic.Config{
+			conninfo: conninfo
+			site_id:  'vlang.io'
+		}) or { panic('Could not initialise traffic statistics: ${err}') }
+	} else {
+		eprintln('Traffic tracking is disabled (set VLANG_DB_CONNINFO to enable it).')
 	}
 	app.static_mime_types['.vtt'] = 'text/vtt; charset=utf-8'
 	// app.serve_static('/favicon.ico', 'src/assets/favicon.ico')
@@ -103,6 +105,10 @@ pub fn (mut app App) utc_now(mut ctx Context) veb.Result {
 
 @['/stats228']
 pub fn (mut app App) stats228(mut ctx Context) veb.Result {
+	if app.stats_traffic == unsafe { nil } {
+		ctx.res.set_status(.service_unavailable)
+		return ctx.html('<!doctype html><title>Traffic statistics unavailable</title><p>Traffic statistics are disabled for this local server.</p>')
+	}
 	return ctx.html(app.stats_traffic.stats_html(ctx.req.url, traffic.PageConfig{
 		site_name:  'V'
 		page_title: 'V traffic statistics'
@@ -112,6 +118,9 @@ pub fn (mut app App) stats228(mut ctx Context) veb.Result {
 }
 
 fn (mut app App) record_home_visit(ctx Context) {
+	if app.traffic == unsafe { nil } {
+		return
+	}
 	// Veb serves requests concurrently, while each tracker owns one PostgreSQL
 	// connection. Traffic collection must never hold up page delivery.
 	if !app.traffic_lock.try_lock() {

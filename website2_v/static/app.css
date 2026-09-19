@@ -251,11 +251,34 @@ li code {
   background: transparent;
   padding: 5px 0;
 }
-.github-link {
-  display: flex;
+.donation-link {
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 11px;
+  justify-content: center;
+  height: 33px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 550;
+  line-height: 1;
+  white-space: nowrap;
+}
+.patreon-link {
+  overflow: hidden;
+}
+.patreon-link img {
+  display: block;
+  height: 33px;
+  width: auto;
+}
+.github-sponsors-link {
+  min-width: 80px;
+  padding-inline: 14px;
+  background: #3b7bbf;
+}
+.donation-link:hover {
+  color: #fff;
+  filter: brightness(1.1);
 }
 .button {
   display: inline-flex;
@@ -1628,12 +1651,6 @@ li code {
     margin-left: auto;
     background: transparent;
   }
-  .header-actions .github-link span {
-    display: none;
-  }
-  .header-actions .github-link {
-    display: none;
-  }
   .header-actions {
     gap: 10px;
   }
@@ -1885,9 +1902,15 @@ li code {
     width: 44px;
     font-size: 10px;
   }
-  .header-actions .button-small {
-    padding: 7px 10px;
-    gap: 8px;
+  .donation-link {
+    height: 28px;
+  }
+  .patreon-link img {
+    height: 28px;
+  }
+  .github-sponsors-link {
+    min-width: 68px;
+    padding-inline: 10px;
     font-size: 10px;
   }
   .menu-toggle {

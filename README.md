@@ -22,9 +22,9 @@ Use the `english.tr` as a reference to add your translation to this project.
 ## Veb application and traffic statistics
 
 The application in `website2_v` uses the reusable sibling `~/code/traffic`
-module. It records privacy-conscious homepage visits in PostgreSQL and serves
-the dashboard at `/stats228`. Set `VLANG_DB_CONNINFO` to a libpq connection
-string before starting the server, for example:
+module. It can run locally without PostgreSQL; visit tracking and `/stats228`
+are disabled unless `VLANG_DB_CONNINFO` is set. To enable them, use a libpq
+connection string, for example:
 
 ```sh
 VLANG_DB_CONNINFO='host=127.0.0.1 dbname=eul user=postgres' \
