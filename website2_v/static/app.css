@@ -518,11 +518,13 @@ li code {
 }
 .showcase-veasel {
   position: absolute;
-  top: clamp(-160px, -10.45vw, -104px);
+  top: 0;
   right: 0;
   z-index: 2;
   width: clamp(180px, 18vw, 275px);
   height: auto;
+  /* The PNG has 15.15% transparent padding below the visible feet. */
+  transform: translate(11%, -84.85%);
   pointer-events: none;
   user-select: none;
 }
@@ -837,6 +839,29 @@ li code {
   background: #090c12;
   max-height: 360px;
 }
+.self-compilation-scene .demo-media {
+  width: min(100%, 476px);
+  justify-self: center;
+  background: transparent;
+}
+.self-compilation-scene {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 60% 110%, #43699557, transparent 65%),
+    linear-gradient(130deg, #121b28, #10151e 55%, #172233);
+}
+.self-compilation-scene > :not(.scene-orbit) {
+  position: relative;
+  z-index: 1;
+}
+.self-compilation-scene .scene-orbit {
+  z-index: 0;
+}
+.self-compilation-scene .demo-media video {
+  aspect-ratio: 1426 / 1080;
+  background: transparent;
+}
 .veb-reload-preview {
   aspect-ratio: 16/10;
   display: flex;
@@ -1061,7 +1086,8 @@ li code {
   background: #0e131a;
   box-shadow: 0 15px 40px #0002;
 }
-.install-window .window-bar > span:nth-child(2) {
+.install-window .window-bar > span:first-child {
+  flex: 1;
   text-align: left;
 }
 .copy-button {
@@ -1095,7 +1121,7 @@ li code {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 30px;
-  margin-top: 40px;
+  margin-top: 0;
   align-items: start;
 }
 .example-layout .install-window {
@@ -1195,7 +1221,7 @@ li code {
 }
 .principles-grid p,
 .principles-grid li {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--muted);
   line-height: 1.9;
 }
@@ -1217,7 +1243,7 @@ li code {
 .principles-grid li {
   margin-bottom: 10px;
   break-inside: avoid;
-  font-size: 12px;
+  font-size: 15px;
 }
 .principles-grid b {
   font-weight: 500;
@@ -1233,39 +1259,21 @@ li code {
   border-bottom: 1px solid var(--line);
   scroll-margin-top: 110px;
 }
-.feature-detail > summary {
+.feature-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  list-style: none;
   padding: 22px 0;
-  cursor: pointer;
-  font-size: 13px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 1.5;
   color: #c4cdda;
 }
-.feature-detail > summary::-webkit-details-marker {
-  display: none;
-}
-.feature-detail > summary:hover {
-  color: white;
-}
-.expand-icon {
-  font-size: 21px;
-  font-weight: 400;
-  color: #8da5c4;
-  flex: none;
-}
-.feature-detail[open] .expand-icon {
-  transform: rotate(45deg);
-}
-.feature-detail[open] > summary {
-  color: var(--accent);
-}
 .feature-body {
   padding-bottom: 28px;
-  font-size: 12px;
+  font-size: 15px;
   color: #9da9ba;
   overflow-wrap: anywhere;
 }
@@ -1984,8 +1992,8 @@ li code {
   .feature-grid {
     gap: 0 25px;
   }
-  .feature-detail > summary {
-    font-size: 12px;
+  .feature-title {
+    font-size: 15px;
   }
   .built-in-v {
     grid-template-columns: repeat(2, 1fr);
@@ -2379,7 +2387,7 @@ li code {
   }
   .principles-grid p,
   .principles-grid li {
-    font-size: 12px;
+    font-size: 15px;
   }
   .principles-grid ul {
     columns: 1;
@@ -2387,12 +2395,12 @@ li code {
   .feature-grid {
     grid-template-columns: 1fr;
   }
-  .feature-detail > summary {
-    font-size: 12px;
+  .feature-title {
+    font-size: 15px;
     padding: 19px 0;
   }
   .feature-body {
-    font-size: 12px;
+    font-size: 14px;
   }
   .feature-body pre {
     font-size: 9px;
