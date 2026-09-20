@@ -2328,6 +2328,21 @@ li code {
   .media-caption .text-link {
     font-size: 10px;
   }
+  .demo-ui-scene {
+    gap: 10px;
+  }
+  .demo-ui-scene .demo-media {
+    width: min(100%, 170px);
+  }
+  .demo-ui-scene .media-caption .eyebrow {
+    margin-bottom: 4px;
+  }
+  .demo-ui-scene .media-caption > p:not(.eyebrow) {
+    margin: 6px 0;
+  }
+  .demo-ui-scene .media-caption .text-link + .text-link {
+    margin-left: 12px;
+  }
   .demo-command {
     font-size: 10px;
     padding: 8px 10px;
