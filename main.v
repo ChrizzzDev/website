@@ -30,9 +30,9 @@ enum Lang {
 	en
 	ru
 	es
+	fr
 	// cn
 	// pt
-	// fr
 	// jp
 }
 
@@ -42,8 +42,7 @@ enum Lang {
 
 fn main() {
 	conninfo := os.getenv('VLANG_DB_CONNINFO')
-	mut app := &App{
-	}
+	mut app := &App{}
 	if conninfo != '' {
 		app.traffic = traffic.new(traffic.Config{
 			conninfo: conninfo
@@ -157,7 +156,8 @@ fn build_tr_menu(cur_lang Lang) string {
 	s := '<select id=select_lang>' +
 		'<option value=en ${if cur_lang == .en { 'selected' } else { '' }}>EN</option>' +
 		'<option value=ru ${if cur_lang == .ru { 'selected' } else { '' }}>РУ</option>' +
-		'<option value=es ${if cur_lang == .es { 'selected' } else { '' }}>ES</option></select>'
+		'<option value=es ${if cur_lang == .es { 'selected' } else { '' }}>ES</option>' +
+		'<option value=fr ${if cur_lang == .fr { 'selected' } else { '' }}>FR</option></select>'
 	/*
 	s := match cur_lang {
 		.ru { 'English' }

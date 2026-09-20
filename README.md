@@ -59,9 +59,9 @@ hardware, build flags, and uncut elapsed time visible.
 (including Lilly and V GUI), five code examples, and the original feature text,
 code, tables, screenshots, and videos. Expanded feature groups remain addressable
 by URL fragments. Resources, books, merchandise, five editor integrations, all
-six sponsors, donation links, community links, original credits, and English /
-Russian language selection remain available. The previous site is preserved in
-`oldv/`.
+six sponsors, donation links, community links, original credits, and English,
+Russian, Spanish, and French language selection remain available. The previous
+site is preserved in `oldv/`.
 
 Check a running instance against the old site's complete link inventory:
 
