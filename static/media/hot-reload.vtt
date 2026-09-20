@@ -1,0 +1,4 @@
+WEBVTT
+
+00:00.000 --> 10:00.000
+V hot code reloading: editing the source updates the running graphical application without restarting it.

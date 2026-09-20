@@ -1,0 +1,13 @@
+[Unit]
+Description=newvlang
+StartLimitIntervalSec=0
+
+[Service]
+Environment="VLANG_DB_CONNINFO=host=127.0.0.1 dbname=eul user=postgres"
+ExecStart=/var/www/new.vlang.io/website2_v
+WorkingDirectory=/var/www/new.vlang.io
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -10,6 +10,9 @@ Skip to content
 home_nav_language
 Language
 -----
+home_nav_stdlib_docs
+Stdlib Docs
+-----
 home_nav_ecosystem
 Ecosystem
 -----
@@ -250,7 +253,7 @@ book2
 The 2nd printed book on V!
 -----
 home_index_aab
-The V Programming language
+The V Programming Language
 -----
 home_index_aac
 Simple, fast, safe, compiled. For developing maintainable software

@@ -24,7 +24,7 @@
 body {
   margin: 0;
   min-width: 320px;
-  font-size: 15px;
+  font-size: 19.5px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
@@ -395,6 +395,7 @@ li code {
   display: flex;
   justify-content: center;
   align-items: stretch;
+  flex-wrap: wrap;
   gap: 12px;
   margin-top: 26px;
 }
@@ -1779,6 +1780,36 @@ li code {
   .main-nav {
     gap: 20px;
   }
+  .main-nav {
+    position: absolute;
+    top: 90px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    background: #111720;
+    border: 1px solid #344052;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px #0008;
+  }
+  .main-nav.is-open {
+    display: flex;
+  }
+  .main-nav a {
+    padding: 5px 0;
+  }
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    padding: 6px 10px;
+    border-radius: 5px;
+    margin-left: auto;
+    background: transparent;
+  }
   .header-actions {
     gap: 14px;
   }
@@ -2168,6 +2199,9 @@ li code {
   .hero-download-actions {
     gap: 9px;
     margin-top: 20px;
+  }
+  .hero-download-actions > * {
+    max-width: 100%;
   }
   .hero-download-main {
     gap: 8px;

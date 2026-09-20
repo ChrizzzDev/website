@@ -1,0 +1,1554 @@
+<section class="section-wrap" id="examples">
+  <div class="example-layout">
+    <div class="code-window example-window">
+      <div class="window-bar">
+        <select id="example-select" aria-label="%home_content_aab">
+          <option value="example-1">%home_content_aac</option>
+          <option value="example-2">%home_content_aad</option>
+          <option value="example-3">%home_content_aae</option>
+          <option value="example-4">%home_content_aaf</option>
+          <option value="example-5">%home_content_aag</option></select
+        ><button
+          class="copy-button example-copy-button"
+          data-copy-example=""
+          type="button"
+          aria-label="%home_content_aah"
+        >
+          <span aria-hidden="true">⧉</span>
+        </button>
+      </div>
+      <pre
+        aria-label="%home_content_aai"
+        class="example-code"
+        id="example-1"
+        tabindex="0"
+      >
+fn main() &#123;
+    areas := ['game', 'web', 'tools', 'science', 'systems',
+              'embedded', 'drivers', 'GUI', 'mobile']
+    for area in areas &#123;
+        println('Hello, &#36;&#123;area&#125; developers!')
+    &#125;
+&#125;</pre>
+      <pre
+        aria-label="%home_content_aaj"
+        class="example-code"
+        hidden=""
+        id="example-2"
+        tabindex="0"
+      >
+// Print file lines that start with "DEBUG:"
+import os
+
+// `read_file` returns an optional (`?string`), it must be checked
+text := os.read_file('app.log') or &#123;
+    // `err` is a special variable that contains the error
+    // in `or &#123;&#125;` blocks
+    eprintln('failed to read the file: &#36;&#123;err&#125;')
+    return
+&#125;
+
+lines := text.split_into_lines()
+for line in lines &#123;
+    if line.starts_with('DEBUG:') &#123;
+        println(line)
+    &#125;
+&#125;
+</pre>
+      <pre
+        aria-label="%home_content_aba"
+        class="example-code"
+        hidden=""
+        id="example-3"
+        tabindex="0"
+      >
+import time
+import net.http
+resp := http.get('https://vlang.io/utc_now') or &#123;
+    println('failed to fetch data from the server')
+    return
+&#125;
+t := time.unix(resp.body.int())
+println(t.format()) // 2019-08-16 17:48
+</pre>
+      <pre
+        aria-label="%home_content_abb"
+        class="example-code"
+        hidden=""
+        id="example-4"
+        tabindex="0"
+      >
+import json
+
+struct User &#123;
+    name string
+    age  int
+mut:
+    is_registered bool
+&#125;
+
+fn main() &#123;
+    s := '[&#123;"name":"Frodo", "age":25&#125;, &#123;"name":"Bobby", "age":10&#125;]'
+    mut users := json.decode([]User, s) or &#123;
+        eprintln('Failed to parse json')
+        return
+    &#125;
+    for user in users &#123;
+        println('&#36;&#123;user.name&#125;: &#36;&#123;user.age&#125;')
+    &#125;
+    println('')
+    for i, mut user in users &#123;
+        println('&#36;&#123;i&#125;) &#36;&#123;user.name&#125;')
+        if !user.can_register() &#123;
+            println('Cannot register &#36;&#123;user.name&#125;, they are too young')
+            continue
+        &#125;
+		// `user` is declared as `mut` in the for loop,
+		// modifying it will modify the array
+        user.register()
+    &#125;
+    // Let's encode users again just for fun
+    println('')
+    println(json.encode(users))
+&#125;
+
+fn (u User) can_register() bool &#123;
+    return u.age &gt;= 16
+&#125;
+
+fn (mut u User) register() &#123;
+    u.is_registered = true
+&#125;
+
+  </pre>
+      <pre
+        aria-label="%home_content_abc"
+        class="example-code"
+        hidden=""
+        id="example-5"
+        tabindex="0"
+      >
+import arrays
+keys := ['accept', 'Accept', 'ACCEPT', 'Content-Type', 'content-type']
+unique_lowercase_keys := arrays.uniq(keys.map(it.to_lower()))
+println(unique_lowercase_keys) // ['accept', 'content-type']
+</pre>
+    </div>
+    <div class="install-window code-window">
+      <div class="window-bar">
+        <span>%home_content_abd</span
+        ><button
+          type="button"
+          class="copy-button"
+          data-copy="install-code"
+          aria-label="%home_content_abe"
+        >
+          %home_content_abf
+        </button>
+      </div>
+      <pre id="install-code">
+git clone --depth=1 https://github.com/vlang/v
+cd v
+make</pre>
+      <div class="install-hint">
+        %home_content_abg <code>make.bat</code> %home_content_abh
+        <code>make</code>.<br />%home_content_abi
+        <code>./v run examples/hello_world.v</code>.
+      </div>
+    </div>
+  </div>
+</section>
+
+@include 'sponsors.html'
+
+<section class="section-wrap" id="features">
+  <div class="section-heading">
+    <div>
+      <h2>%more_features</h2>
+    </div>
+  </div>
+  <div class="principles-grid">
+    <div class="block">
+      <h3>%simple_language_for_maintainable_programs</h3>
+      <p>
+        %home_content_acb
+        <a
+          href="https://github.com/vlang/v/blob/master/doc/docs.md"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_acc</a
+        >
+        %home_content_acd
+      </p>
+      <p>%home_content_ace</p>
+      <p>
+        %home_content_acf
+      </p>
+      <p>
+        %home_content_acg
+        <a
+          href="https://vlang.io/compare#go"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_ach</a
+        >.
+      </p>
+      <p></p>
+      <p></p>
+    </div>
+    <div class="block">
+      <h3>%home_content_aci</h3>
+      <ul>
+        <li>%home_content_acj</li>
+        <li>%home_content_ada</li>
+        <li>%home_content_adb</li>
+        <li>
+          <a href="https://github.com/vlang/v/blob/master/doc/docs.md#variables"
+            >%home_content_adc</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/vlang/v/blob/master/doc/docs.md#access-modifiers"
+            >%home_content_add</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/vlang/v/blob/master/doc/docs.md#optionresult-types-and-error-handling"
+            >%home_content_ade</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/vlang/v/blob/master/doc/docs.md#sum-types"
+            >%home_content_adf</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/vlang/v/blob/master/doc/docs.md#generics"
+            >%home_content_adg</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/vlang/v/blob/master/doc/docs.md#immutable-function-args-by-default"
+            >%home_content_adh</a
+          >
+        </li>
+        <li>%home_content_adi <i>%home_content_adj</i></li>
+        <li>
+          %home_content_aea <i><b>%home_content_aeb</b></i>
+        </li>
+        <li>
+          %home_content_aec
+          <i>%home_content_aed</i>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="feature-grid">
+    <div class="feature-detail" id="performance">
+      <h3 class="feature-title">%home_content_aee</h3>
+      <div class="feature-body">
+        <div class="block">
+          <h4>%home_content_aef</h4>
+          <ul>
+            <li>%home_content_aeg</li>
+            <li>%home_content_aeh</li>
+            <li>%home_content_aei</li>
+            <li>
+              %home_content_aej
+            </li>
+            <li>
+              %home_content_afa <br /><i
+                >%home_content_afb</i
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="block" id="small-and-easy-to-build-compiler">
+          <h4>%home_content_afi</h4>
+          <p>
+            %home_content_afj
+          </p>
+          <pre>cc v.c</pre>
+          %home_content_aga <br /><br />
+          %home_content_agb
+          <p></p>
+          <table>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>%home_content_agc  </td>
+                <td>%home_content_agd</td>
+              </tr>
+              <tr>
+                <td>%home_content_age</td>
+                <td>%home_content_agf</td>
+                <td>%home_content_agg</td>
+              </tr>
+              <tr>
+                <td>%home_content_agh</td>
+                <td>%home_content_agi</td>
+                <td>%home_content_agj</td>
+              </tr>
+              <tr>
+                <td>%home_content_aha</td>
+                <td>%home_content_ahb</td>
+                <td>%home_content_ahc</td>
+              </tr>
+              <tr>
+                <td>%home_content_ahd</td>
+                <td>
+                  %home_content_ahe
+                  <a
+                    class="sidenote"
+                    href="https://lists.llvm.org/pipermail/llvm-dev/2019-April/132028.html"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >[0]</a
+                  >
+                </td>
+                <td>%home_content_ahf</td>
+              </tr>
+              <tr>
+                <td>%home_content_ahg</td>
+                <td>
+                  %home_content_ahh
+                  <a
+                    class="sidenote"
+                    href="https://github.com/apple/swift/blob/1f9da381dcdef98df2a7313d8729750cbac54f45/README.md#getting-started"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >[1]</a
+                  >
+                </td>
+                <td>%home_content_ahi</td>
+              </tr>
+              <tr>
+                <td>%home_content_ahj</td>
+                <td>
+                  %home_content_aia
+                  <a
+                    class="sidenote"
+                    href="https://github.com/vlang/vc/blob/master/v.c"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    >[2]</a
+                  >
+                </td>
+                <td>%home_content_aib</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="feature-detail" id="memory">
+      <h3 class="feature-title">%home_content_aic</h3>
+      <div class="feature-body">
+        <div class="block">
+          <h4>%home_content_aic</h4>
+          <p>
+            %home_content_aid
+          </p>
+          <p>%home_content_aie</p>
+          <p>%home_content_aif</p>
+          <p>
+            %home_content_aig
+            <code>-autofree</code>%home_content_aih
+          </p>
+          <p>
+            %home_content_aii <code>-gc none</code>.
+          </p>
+
+          <p>%home_content_aij <code>v -prealloc</code>.</p>
+          <p></p>
+        </div>
+        <div class="block">
+          <p>
+            %home_content_aja
+          </p>
+          <a
+            href="https://www.youtube.com/watch?v=gmB8ea8uLsM"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="%home_content_ajb"
+              decoding="async"
+              loading="lazy"
+              src="/img/youtube_compile_speed.png"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="feature-detail" id="a-powerful-graphics-library">
+      <h3 class="feature-title">%home_content_bac</h3>
+      <div class="feature-body">
+        <div class="block">
+          <h4>%home_content_bac</h4>
+          <p>
+            %home_content_bad <code>gg</code>%home_content_bae
+          </p>
+          <p>
+            %home_content_baf
+          </p>
+          <ul>
+            <li>%home_content_bag</li>
+            <li>%home_content_bah</li>
+            <li>%home_content_bai</li>
+          </ul>
+          <p>
+            %home_content_baj
+            <a href="https://github.com/vlang/v/blob/master/examples/tetris"
+              >%home_content_bba</a
+            >.
+          </p>
+          <p>
+            %home_content_bbb
+            <a
+              href="https://github.com/vlang/v/tree/master/examples/sokol"
+              rel="noopener noreferrer"
+              target="_blank"
+              >%home_content_bbc</a
+            >.
+          </p>
+          <p></p>
+        </div>
+        <div class="block">
+          <a
+            href="https://x.com/v_language/status/1830269654214099049"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><img
+              alt="%home_content_bbd"
+              decoding="async"
+              loading="lazy"
+              src="/img/engine_screenshot.png"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <div
+      class="feature-detail"
+      id="painless-deployments-and-dependency-management"
+    >
+      <h3 class="feature-title">
+        %home_content_bda
+      </h3>
+      <div class="feature-body">
+        <div class="block">
+          <h4>%home_content_bdb</h4>
+          <p>
+            %home_content_bdc
+          </p>
+          <pre>
+v .
+</pre>
+          <br />
+          %home_content_bdd<br /><br />
+          %home_content_bde<br /><br />
+          %home_content_bdf<br /><br />
+          %home_content_bdg
+          <code>v -cc musl-gcc .</code><br /><br />
+
+          %home_content_bdh
+          <pre>
+v install ui
+		</pre>
+          <p></p>
+        </div>
+        <div class="block">
+          <h4>%home_content_bdi</h4>
+          <p>
+            %home_content_bdj <code>v -prod .</code> %home_content_bea<br /><br />
+            %home_content_beb<br /><br />
+            %home_content_bec
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="feature-detail" id="repl">
+      <h3 class="feature-title">%home_content_bed</h3>
+      <div class="feature-body">
+        <div class="block">
+          <h4>%home_content_bee</h4>
+          <pre>
+v
+&gt;&gt;&gt; import net.http
+&gt;&gt;&gt; data := http.get('https://vlang.io/utc_now')!
+&gt;&gt;&gt; data.body
+1565977541</pre>
+        </div>
+        <div class="block">
+          <h4>%home_content_bef</h4>
+          <p>
+            %home_content_beg
+          </p>
+          <pre>
+for file in ls('build/') {
+  rm(file)
+&#125;
+mv('v.exe', 'build/')
+
+v run deploy.vsh</pre>
+          <p>
+            <a
+              href="https://github.com/vlang/v/blob/master/doc/docs.md#cross-platform-shell-scripts-in-v"
+              >%home_content_beh</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="feature-detail"
+      id="code-formatting-with-vfmt-for-consistent-style"
+    >
+      <h3 class="feature-title">
+        %home_content_bei
+      </h3>
+      <div class="feature-body">
+        <div class="block">
+          <h4>%home_content_bej</h4>
+          <p>
+            %home_content_bfa
+          </p>
+          <p>
+            %home_content_bfb
+          </p>
+          <pre>v fmt -w hello.v</pre>
+        </div>
+        <div class="block">
+          <h4>%home_content_bfc</h4>
+          <p>%home_content_bfd</p>
+          <pre>v -profile profile.txt x.v &amp;&amp; ./x</pre>
+          %home_content_bfe
+          <p></p>
+        </div>
+      </div>
+    </div>
+    <div class="feature-detail" id="javascript-and-wasm-backends">
+      <h3 class="feature-title">%home_content_bff</h3>
+      <div class="feature-body">
+        <div class="block">
+          <h4>%home_content_bfg</h4>
+          <p>%home_content_bfh</p>
+          <pre>v -o hello.js hello.v</pre>
+          <p><i>%home_content_bfi</i></p>
+          <p>
+            %home_content_bfj
+          </p>
+          <p>
+            <a
+              href="https://v-wasm.vercel.app/"
+              rel="noopener noreferrer"
+              target="_blank"
+              >%home_content_bga</a
+            >
+          </p>
+          <p>
+            %home_content_bgb
+          </p>
+          <a
+            href="https://v2048.vercel.app/"
+            rel="noopener noreferrer"
+            target="_blank"
+            >%home_content_bgc</a
+          >
+        </div>
+        <div class="block">
+          <h4>%home_content_bgd</h4>
+          <p>
+            %home_content_bge
+          </p>
+          <pre>v doc os</pre>
+        </div>
+      </div>
+    </div>
+    <div class="feature-detail" id="built-in-testing-framework">
+      <h3 class="feature-title">%home_content_bgf</h3>
+      <div class="feature-body">
+        <div class="block">
+          <h4>%home_content_bgg</h4>
+          <p>
+            %home_content_bgh
+            <code>test_</code>
+          </p>
+          <pre>fn get_string() string &#123; return 'hello' &#125;
+
+fn test_get_string() &#123;
+  assert get_string() == 'hello'
+&#125;
+      </pre>
+        </div>
+        <div class="block">
+          <h4>%home_content_bgi</h4>
+          <p>
+            %home_content_bgj
+          </p>
+          <pre>
+user.v:8:14: error: `update_user` parameter `user` is mutable, you need to provide `mut`: `update_user(mut user)`
+
+    7 |     mut user := User{}
+    8 |     update_user(user)
+      |                 ~~~~
+    9 | }
+	</pre>
+        </div>
+      </div>
+    </div>
+    <div class="feature-detail" id="powerful-built-in-web-framework-veb">
+      <h3 class="feature-title">%home_content_bha</h3>
+      <div class="feature-body">
+        <div class="block">
+          <h4>%home_content_bha</h4>
+          <p>
+            %home_content_bhb
+          </p>
+          <p>
+            <a href="https://github.com/vlang/v/tree/master/vlib/veb"
+              >%home_content_bhc</a
+            >
+          </p>
+          <div class="codeblock" id="codeblock_12828032">
+            <pre><code id="codeblock_hl_93987704">['/post/:id']
+fn (b &amp;Blog) show_post(id int) veb.Result {
+  post := b.posts_repo.retrieve(id) or {
+    return veb.not_found()
+  &#125;
+  return veb.view(post)
+}</code></pre>
+          </div>
+        </div>
+        <div class="block">
+          <p>
+            <a href="https://github.com/vlang/gitly">%home_content_bhd</a>%home_content_bhe
+          </p>
+          <a
+            href="https://github.com/vlang/gitly"
+            rel="noopener noreferrer"
+            target="_blank"
+            ><img
+              alt="%home_content_bhf"
+              decoding="async"
+              loading="lazy"
+              src="https://user-images.githubusercontent.com/687996/85933714-b195fe80-b8da-11ea-9ddd-09cadc2103e4.png"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <div class="feature-detail" id="built-in-orm">
+      <h3 class="feature-title">%home_content_bhg</h3>
+      <div class="feature-body">
+        <div class="block">
+          <h4>%home_content_bhg</h4>
+          <p></p>
+          <div class="codeblock" id="codeblock_63253338">
+            <pre><code id="codeblock_hl_69524066"><span class="keyword">import</span> db.sqlite
+
+<span class="keyword">struct</span> Customer {
+  id <span class="keyword">int</span>
+  name <span class="keyword">string</span>
+  nr_orders <span class="keyword">int</span>
+  country <span class="keyword">string</span>
+&#125;
+
+<span class="keyword">fn</span> main() {
+  db := sqlite.connect(<span class="string">'example.sqlite'</span>) <span class="keyword">or</span> {
+    panic(<span class="string">'could not create/find example.sqlite'</span>)
+  &#125;
+
+  nr_customers := <span class="keyword">sql</span> db {
+    <span class="keyword">select</span> count <span class="keyword">from</span> Customer
+  }!
+  println(<span class="string">'number of customers: &#36;{nr_customers}'</span>)
+
+  <span class="comment">// V syntax can be used to build queries</span>
+  uk_customers := <span class="keyword">sql</span> db {
+    <span class="keyword">select</span> <span class="keyword">from</span> Customer <span class="keyword">where</span> country == <span class="string">'uk'</span> &amp;&amp; nr_orders &gt; 0
+  }!
+
+  <span class="keyword">for</span> customer <span class="keyword">in</span> uk_customers {
+    println(<span class="string">'&#36;{customer.id} - &#36;{customer.name}'</span>)
+  &#125;
+
+  <span class="comment">// by adding `limit 1` we tell V that there will be</span>
+  <span class="comment">// only one object</span>
+  customer := <span class="keyword">sql</span> db {
+    <span class="keyword">select</span> <span class="keyword">from</span> Customer <span class="keyword">where</span> id == 1 <span class="keyword">limit</span> 1
+  }!
+  println(customer.name)
+
+  <span class="comment">// insert a new customer</span>
+  new_customer := Customer{name: <span class="string">'Bob'</span>, nr_orders: 10}
+  <span class="keyword">sql</span> db {
+    <span class="keyword">insert</span> new_customer <span class="keyword">into</span> Customer
+  }!
+&#125;</code></pre>
+          </div>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="section-wrap" id="builtinv">
+  <div class="block">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">%home_content_bhh</p>
+        <h2>%home_content_bhi</h2>
+      </div>
+      <a class="text-link" href="https://github.com/vlang/awesome-v"
+        >%home_content_bhj</a
+      >
+    </div>
+    <div class="built-in-v">
+      <div class="project-card">
+        <h3>%home_content_bia</h3>
+        <p>%home_content_bib</p>
+      </div>
+      <div class="project-card">
+        <a href="https://volt-app.com/"><h3>%home_content_bic</h3></a>
+        <p>
+          %home_content_bid
+        </p>
+      </div>
+      <div class="project-card">
+        <a href="https://github.com/vlang/vinix"><h3>%home_content_bie</h3></a>
+        <p>
+          %home_content_bif
+        </p>
+      </div>
+      <div class="project-card">
+        <a
+          href="https://github.com/vlang/ved"
+          rel="noopener noreferrer"
+          target="_blank"
+          ><h3>%home_content_big</h3></a
+        >
+        <p>%home_content_bih</p>
+      </div>
+      <div class="project-card">
+        <a href="https://vox.sx" rel="noopener noreferrer" target="_blank"
+          ><h3>%home_content_bii</h3></a
+        >
+        <p>
+          %home_content_bij
+        </p>
+      </div>
+      <div class="project-card">
+        <a href="https://volt.im" rel="noopener noreferrer" target="_blank"
+          ><h3>%home_content_bja</h3></a
+        >
+        <p>
+          %home_content_bjb
+        </p>
+      </div>
+      <div class="project-card">
+        <a
+          href="https://github.com/elliotchance/vsql"
+          rel="noopener noreferrer"
+          target="_blank"
+          ><h3>%home_content_bjc</h3></a
+        >
+        <p>
+          %home_content_bjd
+        </p>
+      </div>
+      <div class="project-card">
+        <a href="https://github.com/vlang/coreutils"><h3>%home_content_bje</h3></a>
+        <p>%home_content_bjf</p>
+      </div>
+      <div class="project-card">
+        <a
+          href="https://github.com/vlang/c2v"
+          rel="noopener noreferrer"
+          target="_blank"
+          ><h3>%home_content_bjg</h3></a
+        >
+        <p>
+          %home_content_bjh
+        </p>
+      </div>
+      <div class="project-card">
+        <a
+          href="https://github.com/vlang/ui"
+          rel="noopener noreferrer"
+          target="_blank"
+          ><h3>%home_content_bji</h3></a
+        >
+        <p>%home_content_bjj</p>
+      </div>
+      <div class="project-card">
+        <a
+          href="https://github.com/vlang/gitly"
+          rel="noopener noreferrer"
+          target="_blank"
+          ><h3>%home_content_bhd</h3></a
+        >
+        <p>%home_content_caa</p>
+        <p>
+          <img
+            alt="%home_content_cab"
+            decoding="async"
+            loading="lazy"
+            src="/img/gitly.png"
+          />
+        </p>
+      </div>
+      <div class="project-card">
+        <a
+          href="https://github.com/vlang/vorum"
+          rel="noopener noreferrer"
+          target="_blank"
+          ><h3>%home_content_cac</h3></a
+        >
+        <p>
+          %home_content_cad<br />%home_content_cae
+        </p>
+      </div>
+      <div class="project-card">
+        <a
+          href="https://github.com/dariotarantini/vgram"
+          rel="noopener noreferrer"
+          target="_blank"
+          ><h3>%home_content_caf</h3></a
+        >
+        <p>%home_content_cag</p>
+      </div>
+      <div class="project-card">
+        <a
+          href="https://github.com/vlang/awesome-v"
+          rel="noopener noreferrer"
+          target="_blank"
+          ><h3>%home_content_cah</h3></a
+        >
+        <p>%home_content_cai</p>
+      </div>
+      <div class="project-card">
+        <a
+          href="https://github.com/vlang/vtl"
+          rel="noopener noreferrer"
+          target="_blank"
+          ><h3>%home_content_caj</h3></a
+        >
+        <p>
+          %home_content_cba
+        </p>
+      </div>
+      <div class="project-card">
+        <a
+          href="https://github.com/vlang/vsl"
+          rel="noopener noreferrer"
+          target="_blank"
+          ><h3>%home_content_cbb</h3></a
+        >
+        <p>%home_content_cbc</p>
+      </div>
+      <div class="project-card">
+        <a
+          href="https://github.com/tauraamui/lilly"
+          rel="noopener noreferrer"
+          target="_blank"
+          ><h3>%home_content_cbd</h3></a
+        >
+        <p>%home_content_cbe</p>
+        <p>
+          <a
+            href="https://github.com/tauraamui/lilly"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="%home_content_cbf"
+              decoding="async"
+              loading="lazy"
+              src="/img/lilly.png"
+            />
+          </a>
+        </p>
+      </div>
+      <div class="project-card">
+        <a
+          href="https://github.com/vlang/gui"
+          rel="noopener noreferrer"
+          target="_blank"
+          ><h3>%home_content_cbg</h3></a
+        >
+        <p>%home_content_cbh</p>
+        <p>
+          <img
+            alt="%home_content_cbi"
+            decoding="async"
+            loading="lazy"
+            src="/img/gui.png"
+          />
+        </p>
+      </div>
+    </div>
+    <div>
+      <p>
+        %home_content_cbj
+        <a href="mailto:${contact_email}">%home_content_cca</a>
+      </p>
+    </div>
+  </div>
+</div>
+<section class="section-wrap" id="news">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">%home_content_ccb</p>
+      <h2>%home_content_ccc</h2>
+    </div>
+    <div class="scroll-controls">
+      <button
+        aria-label="%home_content_ccd"
+        data-direction="-1"
+        data-scroll="news-track"
+        type="button"
+      >
+        ←</button
+      ><button
+        aria-label="%home_content_cce"
+        data-direction="1"
+        data-scroll="news-track"
+        type="button"
+      >
+        →
+      </button>
+    </div>
+  </div>
+  <p class="section-note">
+    <a href="https://vlang.veery.blog/blog">%home_content_ccf</a
+    ><span> / </span
+    ><a href="https://github.com/vlang/v/blob/master/ROADMAP.md"
+      >%home_content_ccg</a
+    >
+  </p>
+  <div aria-label="%home_content_cch" class="horizontal-track" id="news-track" tabindex="0">
+    <article class="news-card">
+      <div class="news_date">%home_content_cci</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.5.2"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_ccj</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cda</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.5.1"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cdb</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cdc</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.5"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cdd</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cde</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.4.12"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cdf</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cdg</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.4.11"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cdh</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cdi</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.4.10"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cdj</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cea</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.4.9"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_ceb</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cec</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.4.8"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_ced</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cee</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.4.7"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cef</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_ceg</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.4.6"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_ceh</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cei</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.4.5"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cej</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cfa</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.4.4"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cfb</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cfc</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.4.3"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cfd</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cfe</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.4.2"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cff</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cfg</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.4.1"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cfh</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cfi</div>
+      <div>
+        <a
+          href="https://vlang.veery.blog/post/725/v-0.4-is-out"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cfj</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cga</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.3.5"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cgb</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cgc</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.3.4"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cgd</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cge</div>
+      <div>
+        <a
+          href="https://vlang.veery.blog/post/723/Getting-Started-with-V"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cgf</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cgg</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.3.3"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cgh</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cgi</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.3.2"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cgj</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cha</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/releases/tag/0.3.1"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_chb</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_chc</div>
+      <div>
+        <a
+          href="https://github.com/vlang/v/discussions/14895"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_chd</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_che</div>
+      <div>
+        %home_content_chf
+
+        <a
+          href="https://www.youtube.com/watch?v=6oXrz3oRoEg"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          %home_content_chg</a
+        >
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_chh</div>
+      <div>
+        %home_content_chi
+        <a
+          href="https://twitter.com/v_language/status/1535291800717500416"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_chj</a
+        >.
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cia</div>
+      <div>
+        %home_content_cib
+      </div>
+    </article>
+    <article class="news-card">
+      <div class="news_date">%home_content_cic</div>
+      <div>%home_content_cid</div>
+    </article>
+  </div>
+</section>
+<section class="section-wrap" id="reviews">
+  <div class="section-heading">
+    <div>
+      <p class="eyebrow">%home_content_cie</p>
+      <h2>%home_content_cif</h2>
+    </div>
+    <div class="scroll-controls">
+      <button
+        aria-label="%home_content_cig"
+        data-direction="-1"
+        data-scroll="reviews-track"
+        type="button"
+      >
+        ←</button
+      ><button
+        aria-label="%home_content_cih"
+        data-direction="1"
+        data-scroll="reviews-track"
+        type="button"
+      >
+        →
+      </button>
+    </div>
+  </div>
+  <p class="section-note">%what_developers_say</p>
+  <div
+    aria-label="%home_content_cii"
+    class="horizontal-track"
+    id="reviews-track"
+    tabindex="0"
+  >
+    <article class="review-card">
+      %home_content_cij
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/630144782370471978/1547653035868688394"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cja</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_cjb
+
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/592842126304477184/1290363788322799628"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cjc</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_cjd
+
+      <div>
+        <a
+          href="https://kristun.dev/posts/my-foray-into-vlang/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cje</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_cjf
+
+      <div>
+        <a
+          href="https://github.com/vlang/v/discussions/7610#discussioncomment-9486329"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cjg</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_cjh
+
+      <div>
+        <a
+          href="https://github.com/vlang/v/discussions/14222#discussioncomment-12507821"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_cji</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_cjj
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/592106336838352923/1144221785592709181"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_daa</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dab
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/592106336838352923/660514891010015263"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_dac</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dad
+      <ul>
+        <li>
+          %home_content_dae
+        </li>
+        <li>%home_content_daf</li>
+        <li>%home_content_dag</li>
+        <li>
+          %home_content_dah
+
+          <div>
+            <a
+              href="https://discord.com/channels/592103645835821068/630144782370471978/1191404948156596274"
+              rel="noopener noreferrer"
+              target="_blank"
+              >%home_content_dai</a
+            >
+          </div>
+        </li>
+      </ul>
+    </article>
+    <article class="review-card">
+      %home_content_daj
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/592106336838352923/765085510988333086"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_dba</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dbb
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/592842126304477184/1124867320108564533"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_dbc</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dbd
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/592842126304477184/1349392947602391110"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_dbe</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dbf
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/665558664949530644/1464036956823621684"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_dbg</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dbh
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/713909145899630632/1064291940922818651"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_dbi</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dbj
+      <div>
+        <br />
+        %home_content_dca
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dcb
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/592106336838352923/831533549617807440"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_dcc</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dcd
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/592106336838352923/1241682701686145085"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_dce</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dcf
+
+      <ul>
+        <li>%home_content_dcg</li>
+        <li>%home_content_dch</li>
+        <li>%home_content_dci</li>
+        <li>%home_content_dcj</li>
+        <li>
+          %home_content_dda
+
+          <div>
+            <a
+              href="https://github.com/vlang/v/discussions/7610#discussioncomment-5352952"
+              rel="noopener noreferrer"
+              target="_blank"
+              >%home_content_ddb</a
+            >
+          </div>
+        </li>
+      </ul>
+    </article>
+    <article class="review-card">
+      %home_content_ddc
+      <div>
+        <a
+          href="https://github.com/vlang/v/discussions/7610#discussioncomment-5672227"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_ddd</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dde
+      <div>
+        <a
+          href="https://github.com/vlang/v/discussions/12970#discussioncomment-6396434"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_ddf</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_ddg
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/630144782370471978/1196801467256950916"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_ddh</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_ddi
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/592106336838352923/1245483194636046487"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_ddj</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dea
+      <div>
+        <a
+          href="https://www.youtube.com/watch?v=cUv13In9RP4&amp;lc=UgwnieH3wGoKBdnwZoN4AaABAg"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_deb</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_ddg
+
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/630144782370471978/1196801467256950916"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_ddh</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dec
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/713909145899630632/1283238558622285835"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_ded</a
+        >
+      </div>
+    </article>
+    <article class="review-card">
+      %home_content_dee
+      <div>
+        <a
+          href="https://discord.com/channels/592103645835821068/592294828432424960/1358793430670774352"
+          rel="noopener noreferrer"
+          target="_blank"
+          >%home_content_def</a
+        >
+      </div>
+    </article>
+  </div>
+</section>

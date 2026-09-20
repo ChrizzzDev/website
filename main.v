@@ -10,6 +10,7 @@ import veb
 const port = 8082
 const visit_cookie_name = 'vlang_session_visit'
 const contact_email = 'alexander@vlang.io'
+const stats_access_header = 'X-Stats-Access'
 
 pub struct App {
 	veb.StaticHandler
@@ -28,8 +29,8 @@ mut:
 enum Lang {
 	en
 	ru
+	es
 	// cn
-	// es
 	// pt
 	// fr
 	// jp
@@ -66,7 +67,9 @@ fn main() {
 	}
 	*/
 
-	veb.run[App, Context](mut app, port)
+	veb.run_at[App, Context](mut app, host: 'localhost', port: port, family: .ip) or {
+		panic('Failed to start Veb server: ${err}')
+	}
 }
 
 pub fn (mut app App) index(mut ctx Context) veb.Result {
@@ -105,6 +108,12 @@ pub fn (mut app App) utc_now(mut ctx Context) veb.Result {
 
 @['/stats228']
 pub fn (mut app App) stats228(mut ctx Context) veb.Result {
+	access_token := os.getenv('VLANG_STATS_TOKEN')
+	provided_token := ctx.req.header.get_custom(stats_access_header) or { '' }
+	if access_token == '' || provided_token != access_token {
+		ctx.res.set_status(.forbidden)
+		return ctx.text('Forbidden')
+	}
 	if app.stats_traffic == unsafe { nil } {
 		ctx.res.set_status(.service_unavailable)
 		return ctx.html('<!doctype html><title>Traffic statistics unavailable</title><p>Traffic statistics are disabled for this local server.</p>')
@@ -144,10 +153,11 @@ pub fn (mut ctx Context) set_lang() {
 fn build_tr_menu(cur_lang Lang) string {
 	// mut sb := strings.new_builder()
 	// sb.write_string('<select>')
-	// TODO loop when >2 langs
+	// TODO loop when more languages are added
 	s := '<select id=select_lang>' +
 		'<option value=en ${if cur_lang == .en { 'selected' } else { '' }}>EN</option>' +
-		'<option value=ru ${if cur_lang == .ru { 'selected' } else { '' }}>РУ</option></select>'
+		'<option value=ru ${if cur_lang == .ru { 'selected' } else { '' }}>РУ</option>' +
+		'<option value=es ${if cur_lang == .es { 'selected' } else { '' }}>ES</option></select>'
 	/*
 	s := match cur_lang {
 		.ru { 'English' }

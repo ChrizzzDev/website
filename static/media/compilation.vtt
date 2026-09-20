@@ -1,0 +1,4 @@
+WEBVTT
+
+00:00.000 --> 00:16.500
+Original macOS recording: V compiles the compiler, then the resulting executable rebuilds the compiler. The terminal shows the measured build times.
