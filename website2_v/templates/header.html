@@ -19,14 +19,25 @@
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://new.vlang.io/img/v-logo.png" />
     <link rel="icon" href="/img/v-logo.png" />
-    <link rel="stylesheet" href="/app.css?v=20260920-7" />
-    <script src="/app.js?v=20260920-7" defer></script>
-    <title>V — The V Programming Language</title>
+    <link rel="stylesheet" href="/app.css?v=20260920-8" />
+	<script src="/app.js?v=20260920-10" defer></script>
+	<title>%home_meta_title</title>
   </head>
-  <body>
-    <a class="skip-link" href="#main-content">Skip to content</a>
+	<body
+	  data-i18n-language-error="%home_js_language_error"
+	  data-i18n-resume-demos="%home_js_resume_demos"
+	  data-i18n-pause-demos="%home_js_pause_demos"
+	  data-i18n-doom-video-title="%home_js_doom_video_title"
+	  data-i18n-recording-label="%home_js_recording_label"
+	  data-i18n-english="%home_js_english"
+	  data-i18n-copied="%home_js_copied"
+	  data-i18n-copied-status="%home_js_copied_status"
+	  data-i18n-select-copy="%home_js_select_copy"
+	  data-i18n-clipboard-error="%home_js_clipboard_error"
+	>
+	<a class="skip-link" href="#main-content">%home_skip_to_content</a>
     <header class="site-header">
-      <a class="wordmark" href="/" aria-label="V programming language home"
+      <a class="wordmark" href="/" aria-label="%home_shared_aab"
         ><img src="/img/v-logo.png" width="30" height="30" alt="" />
         </a
       >
@@ -36,29 +47,29 @@
         aria-expanded="false"
         aria-controls="main-nav"
       >
-        Menu <span aria-hidden="true">☰</span>
+        %home_shared_aac <span aria-hidden="true">☰</span>
       </button>
-      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-        <a href="/#features">Language</a>
+      <nav class="main-nav" id="main-nav" aria-label="%home_shared_aad">
+		<a href="/#features">%home_nav_language</a>
         <a href="https://docs.vlang.io">%documentation</a>
-        <a href="/#builtinv">Ecosystem</a>
-        <a href="/#community">Community</a>
-        <a href="https://play.vlang.io">Playground</a>
+		<a href="/#builtinv">%home_nav_ecosystem</a>
+		<a href="/#community">%home_nav_community</a>
+		<a href="https://play.vlang.io">%playground</a>
       </nav>
       <div class="header-actions">
-        <label class="sr-only" for="select_lang">Language</label
+		<label class="sr-only" for="select_lang">%home_language_label</label
         >@{veb.raw(build_tr_menu(ctx.lang))}<a
           class="donation-link patreon-link"
           href="https://patreon.com/vlang"
           target="_blank"
           rel="noopener noreferrer"
-          ><img src="/img/patreon.png" alt="Support V on Patreon" /></a
+          ><img src="/img/patreon.png" alt="%home_shared_aae" /></a
         ><a
           class="donation-link github-sponsors-link"
           href="https://github.com/sponsors/medvednikov"
           target="_blank"
           rel="noopener noreferrer"
-          >GitHub Sponsors</a
+		  >%home_github_sponsors</a
         >
       </div>
     </header>

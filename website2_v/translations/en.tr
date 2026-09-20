@@ -1,6 +1,27 @@
 examples
 Examples
 -----
+home_meta_title
+V — The V Programming Language
+-----
+home_skip_to_content
+Skip to content
+-----
+home_nav_language
+Language
+-----
+home_nav_ecosystem
+Ecosystem
+-----
+home_nav_community
+Community
+-----
+home_language_label
+Language
+-----
+home_github_sponsors
+GitHub Sponsors
+-----
 documentation
 Documentation
 -----
@@ -227,3 +248,1467 @@ The first printed book on V!
 -----
 book2
 The 2nd printed book on V!
+-----
+home_index_aab
+The V Programming language
+-----
+home_index_aac
+Simple, fast, safe, compiled. For developing maintainable software
+-----
+home_index_aad
+github.com/vlang/v
+-----
+home_index_aae
+★ 38k
+-----
+home_index_aaf
+macOS (Apple Silicon)
+-----
+home_index_aag
+11.4 MB
+-----
+home_index_aah
+More V download options
+-----
+home_index_aai
+macOS
+-----
+home_index_aaj
+Apple Silicon
+-----
+home_index_aba
+Intel
+-----
+home_index_abb
+Linux
+-----
+home_index_abc
+x86_64
+-----
+home_index_abd
+Windows
+-----
+home_index_abe
+Build from source
+-----
+home_index_abf
+V in action
+-----
+home_index_abg
+V 0.4.8 compiling itself in 0.48 seconds on a MacBook Air M3
+-----
+home_index_abh
+Ultra fast compilation speed
+-----
+home_index_abi
+V compiles ≈100k LOC (Clang backend) and ≈700k LOC (arm64 and tcc backends) per second.
+-----
+home_index_abj
+(Apple M5, no optimization)
+-----
+home_index_aca
+V is written in V and compiles itself in 0.5 seconds on M5.
+-----
+home_index_acb
+Try it yourself:
+-----
+home_index_acc
+The original DOOM running after translation from C to V
+-----
+home_index_acd
+Play DOOM translation video
+-----
+home_index_ace
+Watch C become V
+-----
+home_index_acf
+C → V → DOOM
+-----
+home_index_acg
+Old-school game.
+-----
+home_index_ach
+New possibilities.
+-----
+home_index_aci
+Translating DOOM from C to V and building it in under a second:
+-----
+home_index_acj
+You can read translated code here:
+-----
+home_index_ada
+github.com/vlang/doom ↗
+-----
+home_index_adb
+A running V application changes immediately as its code is edited
+-----
+home_index_adc
+Edit. Save. It’s live.
+-----
+home_index_add
+Change the code.
+-----
+home_index_ade
+Keep the moment.
+-----
+home_index_adf
+Live code reloading, without losing your application’s state. A shorter path from idea to what you see.
+-----
+home_index_adg
+Explore live reloading ↗
+-----
+home_index_adh
+Preview placeholder for a Veb browser live-reload demonstration video
+-----
+home_index_adi
+localhost:8080
+-----
+home_index_adj
+LIVE
+-----
+home_index_aea
+Demo video in progress
+-----
+home_index_aeb
+Changes appear
+-----
+home_index_aec
+right away.
+-----
+home_index_aed
+Updated after save
+-----
+home_index_aee
+Veb · Browser live reload
+-----
+home_index_aef
+Save the code.
+-----
+home_index_aeg
+See the website.
+-----
+home_index_aeh
+Running websites refresh instantly in the browser after every save. No compiling, rerunning, or manual browser refreshes.
+-----
+home_index_aei
+Cross-compiling a Windows application from another operating system
+-----
+home_index_aej
+One language. More places.
+-----
+home_index_afa
+Build here.
+-----
+home_index_afb
+Run there.
+-----
+home_index_afc
+Cross-compile native applications for another operating system. Bring your tools with you.
+-----
+home_index_afd
+Explore cross compilation ↗
+-----
+home_index_afe
+Vinix, an operating system written in V, running a graphical desktop with native applications
+-----
+home_index_aff
+From the kernel up.
+-----
+home_index_afg
+Yes, an entire
+-----
+home_index_afh
+operating system.
+-----
+home_index_afi
+Meet Vinix. A modern operating system written in V, taking simplicity all the way down to the metal.
+-----
+home_index_afj
+Explore Vinix ↗
+-----
+home_index_aga
+Choose a demo
+-----
+home_index_agb
+Translating DOOM with C2V
+-----
+home_index_agc
+Hot code reloading
+-----
+home_index_agd
+Instant Veb browser reload
+-----
+home_index_age
+Cross compilation
+-----
+home_index_agf
+Vinix kernel & operating system
+-----
+home_shared_aab
+V programming language home
+-----
+home_shared_aac
+Menu
+-----
+home_shared_aad
+Main navigation
+-----
+home_shared_aae
+Support V on Patreon
+-----
+home_shared_aaf
+You’re in good company
+-----
+home_shared_aag
+A language. A community.
+-----
+home_shared_aah
+Join us on Discord ↗
+-----
+home_shared_aai
+Find your people.
+-----
+home_shared_aaj
+Ask a question, share what you’re building, or help shape what comes next.
+-----
+home_shared_aba
+Discord ↗
+-----
+home_shared_abb
+X / Twitter ↗
+-----
+home_shared_abc
+Mastodon ↗
+-----
+home_shared_abd
+Telegram ↗
+-----
+home_shared_abe
+YouTube ↗
+-----
+home_shared_abf
+Twitch ↗
+-----
+home_shared_abg
+Veery ↗
+-----
+home_shared_abh
+Your favorite editor, too.
+-----
+home_shared_abi
+Bring syntax highlighting and language tools to the place you already call home.
+-----
+home_shared_abj
+VS Code
+-----
+home_shared_aca
+IntelliJ
+-----
+home_shared_acb
+Vim
+-----
+home_shared_acc
+Emacs
+-----
+home_shared_acd
+Sublime Text
+-----
+home_shared_ace
+Go a little deeper.
+-----
+home_shared_acf
+Getting Started with V Programming book cover
+-----
+home_shared_acg
+Getting Started with V Programming
+-----
+home_shared_ach
+The first printed book on V ↗
+-----
+home_shared_aci
+Randomness Revisited using V book cover
+-----
+home_shared_acj
+Randomness Revisited
+-----
+home_shared_ada
+The second printed book on V ↗
+-----
+home_shared_adb
+Visit the V merch store ↗
+-----
+home_shared_adc
+Open source. Shared ambition.
+-----
+home_shared_add
+Huly
+-----
+home_shared_ade
+ThreeFold
+-----
+home_shared_adf
+Syndica
+-----
+home_shared_adg
+October Swimmer
+-----
+home_shared_adh
+MX
+-----
+home_shared_adi
+What Lab
+-----
+home_shared_adj
+V
+-----
+home_shared_aea
+Small language.
+-----
+home_shared_aeb
+Limitless things to build.
+-----
+home_shared_aec
+Learn
+-----
+home_shared_aed
+Standard library
+-----
+home_shared_aee
+Explore
+-----
+home_shared_aef
+V package manager
+-----
+home_shared_aeg
+Compare languages
+-----
+home_shared_aeh
+FAQ
+-----
+home_shared_aei
+Follow along
+-----
+home_shared_aej
+Changelog
+-----
+home_shared_afa
+Roadmap
+-----
+home_shared_afb
+RFCs
+-----
+home_shared_afc
+github.com/vlang/v
+-----
+home_shared_afd
+Support V
+-----
+home_shared_afe
+GitHub Sponsors
+-----
+home_shared_aff
+Patreon
+-----
+home_shared_afg
+PayPal
+-----
+home_shared_afh
+Merch
+-----
+home_shared_afi
+Get in touch
+-----
+home_shared_afj
+Open source, with love.
+-----
+home_shared_aga
+MIT License
+-----
+home_shared_agb
+Back to top ↑
+-----
+home_content_aab
+Explore the language
+-----
+home_content_aac
+Hello, developers
+-----
+home_content_aad
+Read & filter a file
+-----
+home_content_aae
+HTTP + time
+-----
+home_content_aaf
+JSON encoding & decoding
+-----
+home_content_aag
+Map + unique
+-----
+home_content_aah
+Copy example
+-----
+home_content_aai
+Hello, developers code
+-----
+home_content_aaj
+Read & filter a file code
+-----
+home_content_aba
+HTTP + time code
+-----
+home_content_abb
+JSON encoding & decoding code
+-----
+home_content_abc
+Map + unique code
+-----
+home_content_abd
+Install V from source
+-----
+home_content_abe
+Copy installation commands
+-----
+home_content_abf
+Copy ⧉
+-----
+home_content_abg
+On Windows, run
+-----
+home_content_abh
+instead of
+-----
+home_content_abi
+Then try
+-----
+home_content_abj
+Simple by design. Powerful by default.
+-----
+home_content_aca
+The language gets out of your way.
+-----
+home_content_acb
+You can learn the entire language by going through the
+-----
+home_content_acc
+documentation
+-----
+home_content_acd
+over a weekend, and in most cases there's only one way to do something.
+-----
+home_content_ace
+This results in simple, readable, and maintainable code.
+-----
+home_content_acf
+Despite being simple, V gives a lot of power to the developer and can be used in pretty much every field, including systems programming, webdev, gamedev, GUI, mobile, science, embedded, tooling, etc.
+-----
+home_content_acg
+V is very similar to Go. If you know Go, you already know ≈80% of V. Things V improves on Go:
+-----
+home_content_ach
+vlang.io/compare#go
+-----
+home_content_aci
+Safety
+-----
+home_content_acj
+Bounds checking
+-----
+home_content_ada
+No undefined values
+-----
+home_content_adb
+No variable shadowing
+-----
+home_content_adc
+Immutable variables by default
+-----
+home_content_add
+Immutable structs by default
+-----
+home_content_ade
+Option/Result and mandatory error checks
+-----
+home_content_adf
+Sum types
+-----
+home_content_adg
+Generics
+-----
+home_content_adh
+Immutable function args by default, mutable args have to be marked on call
+-----
+home_content_adi
+No null
+-----
+home_content_adj
+(allowed in unsafe code)
+-----
+home_content_aea
+No undefined behavior
+-----
+home_content_aeb
+new!
+-----
+home_content_aec
+No global variables
+-----
+home_content_aed
+(can be enabled for low level apps like kernels via a flag)
+-----
+home_content_aee
+Performance & Fast compilation
+-----
+home_content_aef
+Performance
+-----
+home_content_aeg
+C interop without any costs
+-----
+home_content_aeh
+Minimal amount of allocations
+-----
+home_content_aei
+Built-in serialization without runtime reflection
+-----
+home_content_aej
+Compiles to native binaries without any dependencies: a simple web server is only about 250 KB
+-----
+home_content_afa
+As fast as C (V's main backend compiles to human readable C), with equivalent code.
+-----
+home_content_afb
+V does introduce some overhead for safety (such as array bounds checking, GC free), but these features can be disabled/bypassed when performance is more important.
+-----
+home_content_afc
+Fast compilation
+-----
+home_content_afd
+V compiles ≈80k (Clang backend) and ≈400k (x64 and tcc backends) lines of code per second.
+-----
+home_content_afe
+(Apple M2, no optimization)
+-----
+home_content_aff
+V is written in V and compiles itself in under a second (
+-----
+home_content_afg
+0.33s on MacBook Air M3
+-----
+home_content_afh
+Most of the compiler is still single threaded, so it's going to be 2-3x faster in the future!
+-----
+home_content_afi
+Small and easy to build compiler
+-----
+home_content_afj
+V can be bootstrapped in under a second by compiling its code translated to C with a simple
+-----
+home_content_aga
+No libraries or dependencies needed.
+-----
+home_content_agb
+For comparison, space and time required to build each compiler:
+-----
+home_content_agc
+Space
+-----
+home_content_agd
+Build time
+-----
+home_content_age
+Go
+-----
+home_content_agf
+525 MB
+-----
+home_content_agg
+1m 33s
+-----
+home_content_agh
+Rust
+-----
+home_content_agi
+30 GB
+-----
+home_content_agj
+45m
+-----
+home_content_aha
+GCC
+-----
+home_content_ahb
+8 GB
+-----
+home_content_ahc
+50m
+-----
+home_content_ahd
+Clang
+-----
+home_content_ahe
+90 GB
+-----
+home_content_ahf
+60m
+-----
+home_content_ahg
+Swift
+-----
+home_content_ahh
+70 GB
+-----
+home_content_ahi
+90m
+-----
+home_content_ahj
+V
+-----
+home_content_aia
+< 20 MB
+-----
+home_content_aib
+<1s
+-----
+home_content_aic
+Flexible memory management
+-----
+home_content_aid
+V avoids doing unnecessary allocations in the first place by using value types, string buffers, promoting a simple abstraction-free code style.
+-----
+home_content_aie
+There are 4 ways to manage memory in V.
+-----
+home_content_aif
+The default is a minimal and a well performing tracing GC.
+-----
+home_content_aig
+The second way is autofree, it can be enabled with
+-----
+home_content_aih
+. It takes care of most objects (~90-100%): the compiler inserts necessary free calls automatically during compilation. Remaining small percentage of objects is freed via GC. The developer doesn't need to change anything in their code. "It just works", like in Python, Go, or Java, except there's no heavy GC tracing everything or expensive RC for each object. Autofree is still experimental and not production ready yet. That's planned for V 1.0.
+-----
+home_content_aii
+For developers willing to have more low level control, memory can be managed manually with
+-----
+home_content_aij
+Arena allocation is available via
+-----
+home_content_aja
+V's autofree demo. All objects are freed during compilation. Running the Ved editor on an 8 MB file with 0 leaks:
+-----
+home_content_ajb
+Youtube Compile Speed
+-----
+home_content_ajc
+C translation
+-----
+home_content_ajd
+V can translate your entire C project and offer you the safety, simplicity, and compilation speed-up (via modules).
+-----
+home_content_aje
+A
+-----
+home_content_ajf
+blog post/tutorial
+-----
+home_content_ajg
+about translating DOOM is available.
+-----
+home_content_ajh
+C++ to V translation is at an early stage.
+-----
+home_content_aji
+Hot code reloading
+-----
+home_content_ajj
+Get your changes instantly without recompiling.
+-----
+home_content_baa
+Since you also don't have to get to the state you are working on after every compilation, this can save a lot of precious minutes of your development time.
+-----
+home_content_bab
+github.com/.../examples/hot_reload
+-----
+home_content_bac
+A powerful graphics library
+-----
+home_content_bad
+Cross-platform drawing library
+-----
+home_content_bae
+, using OpenGL/Metal/DirectX 11 for rendering 2D applications.
+-----
+home_content_baf
+There's also a 3D engine in development with the following features already available:
+-----
+home_content_bag
+Loading complex 3D objects with textures
+-----
+home_content_bah
+Camera (moving, looking around)
+-----
+home_content_bai
+Skeletal animation
+-----
+home_content_baj
+A simple example of the graphics library in action is
+-----
+home_content_bba
+tetris.v
+-----
+home_content_bbb
+For 3D examples, check out
+-----
+home_content_bbc
+this
+-----
+home_content_bbd
+Engine Screenshot
+-----
+home_content_bbe
+Light and fast cross-platform GUI library
+-----
+home_content_bbf
+Build native UI apps with V UI. You no longer need to embed a browser to develop cross-platform apps quickly.
+-----
+home_content_bbg
+V has a UI module that uses custom drawing, similar to Qt and Flutter, but with as much similarity to the native GUI toolkit as possible.
+-----
+home_content_bbh
+It has a declarative API similar to SwiftUI and React Native and runs on Windows, Linux, macOS, and Android.
+-----
+home_content_bbi
+Coming soon:
+-----
+home_content_bbj
+a Delphi-like visual editor for building native GUI apps
+-----
+home_content_bca
+iOS support
+-----
+home_content_bcb
+github.com/vlang/ui
+-----
+home_content_bcc
+Volt, a 3 MB Slack/Discord client built with V and V UI:
+-----
+home_content_bcd
+Screen3
+-----
+home_content_bce
+Easy cross compilation
+-----
+home_content_bcf
+To cross compile your software simply run
+-----
+home_content_bcg
+or
+-----
+home_content_bch
+. No extra steps required, even for GUI and graphical apps!
+-----
+home_content_bci
+(Compiling macOS software only works on macOS for now.)
+-----
+home_content_bcj
+Building V for Windows using V for macOS, and then testing resulting v.exe on a Windows VM:
+-----
+home_content_bda
+Painless deployments and dependency management & Run everywhere
+-----
+home_content_bdb
+Painless deployments and dependency management
+-----
+home_content_bdc
+To build your project, no matter how big, all you need to do is run
+-----
+home_content_bdd
+No build environments, makefiles, headers, virtual environments, etc.
+-----
+home_content_bde
+You get a single binary that is guaranteed to work on all operating systems (provided you cross compile) without any external dependencies.
+-----
+home_content_bdf
+This binary is self-contained except for the OS-provided system library (libc), which is linked dynamically.
+-----
+home_content_bdg
+To achieve fully static binaries on Linux, you can use
+-----
+home_content_bdh
+Installing new libraries via vpm, a centralized package manager written in V, is as simple as
+-----
+home_content_bdi
+Run everywhere
+-----
+home_content_bdj
+V can emit (human readable) C, so you get the great platform support and optimization of GCC and Clang. (Use
+-----
+home_content_bea
+to make optimized builds.)
+-----
+home_content_beb
+Emitting C will always be an option, even after direct machine code generation matures.
+-----
+home_content_bec
+V can call C code, and calling V code is possible in any language that has C interop.
+-----
+home_content_bed
+REPL & Cross-platform shell scripts in V
+-----
+home_content_bee
+REPL
+-----
+home_content_bef
+Cross-platform shell scripts in V
+-----
+home_content_beg
+V can be used as an alternative to Bash to write deployment scripts, build scripts, etc. The advantage of using V for this is the simplicity and predictability of the language, and cross-platform support. "V scripts" run on Unix-like systems as well as on Windows.
+-----
+home_content_beh
+Read more about V script
+-----
+home_content_bei
+Code formatting with vfmt for consistent style & A built-in code profiler
+-----
+home_content_bej
+Code formatting with vfmt for consistent style
+-----
+home_content_bfa
+No more arguments about coding styles. There's one official coding style enforced by the vfmt formatter.
+-----
+home_content_bfb
+All V code bases are guaranteed to use the same style, making it easier to read and change code written by other developers.
+-----
+home_content_bfc
+A built-in code profiler
+-----
+home_content_bfd
+Build and run your program with
+-----
+home_content_bfe
+and you'll get a detailed list for all function calls: number of calls, average time per call, total time per call.
+-----
+home_content_bff
+JavaScript and WASM backends & Automatic documentation
+-----
+home_content_bfg
+JavaScript and WASM backends
+-----
+home_content_bfh
+V programs can be translated to JavaScript (WIP):
+-----
+home_content_bfi
+The JS backend is at an early stage.
+-----
+home_content_bfj
+They can also be compiled to WASM (for now with Emscripten, but native WASM support is planned). V compiler compiled to WASM and running V programs by translating them to JavaScript:
+-----
+home_content_bga
+v-wasm.vercel.app
+-----
+home_content_bgb
+A game written using V's graphical backend and compiled to WASM:
+-----
+home_content_bgc
+v2048
+-----
+home_content_bgd
+Automatic documentation
+-----
+home_content_bge
+Use vdoc to get instant documentation generated directly from the module's source code. No need to keep and update separate documentation.
+-----
+home_content_bgf
+Built-in testing framework & Friendly error messages
+-----
+home_content_bgg
+Built-in testing framework
+-----
+home_content_bgh
+Writing tests is very easy: just start your test function with
+-----
+home_content_bgi
+Friendly error messages
+-----
+home_content_bgj
+Helpful error messages make learning the language and fixing errors simpler:
+-----
+home_content_bha
+Powerful built-in web framework Veb
+-----
+home_content_bhb
+Veb is very fast (built on top of pico.v which has been at the top of TechEmpower benchmark), it compiles into a single binary (html templates are also compiled), supports hot code reloading (the website is automatically updated in the browser once you change any .v/.html file).
+-----
+home_content_bhc
+github.com/vlang/v/tree/master/vlib/veb
+-----
+home_content_bhd
+Gitly
+-----
+home_content_bhe
+, a light and fast alternative to GitHub/GitLab is built in V and Veb.
+-----
+home_content_bhf
+85933714-B195Fe80-B8Da-11Ea-9Ddd-09Cadc2103E4
+-----
+home_content_bhg
+Built-in ORM
+-----
+home_content_bhh
+From idea to something real
+-----
+home_content_bhi
+Built with V.
+-----
+home_content_bhj
+Explore the ecosystem ↗
+-----
+home_content_bia
+The V Compiler
+-----
+home_content_bib
+V itself is written in V.
+-----
+home_content_bic
+Volt
+-----
+home_content_bid
+Native desktop client for Slack, Skype, Matrix, Telegram, Twitch and many more services.
+-----
+home_content_bie
+Vinix
+-----
+home_content_bif
+A minimalistic open-source OS that can already run Bash, GCC, V, g++, GTK3.
+-----
+home_content_big
+Ved
+-----
+home_content_bih
+Open-source 1 MB editor with the performance of Sublime Text.
+-----
+home_content_bii
+Vox Browser
+-----
+home_content_bij
+An early stage HTML+CSS renderer which can already render sites like Hacker News 20x faster than Chrome while using 4x less RAM.
+-----
+home_content_bja
+Volt.im instant messaging and social platform
+-----
+home_content_bjb
+An upcoming open source alternative to Discord and Telegram that combines the best features of the two while being ultra fast and light.
+-----
+home_content_bjc
+vsql
+-----
+home_content_bjd
+A single-file SQL database written in pure V with no dependencies.
+-----
+home_content_bje
+coreutils in V
+-----
+home_content_bjf
+Programs equivalent to GNU coreutils, written 100% in V.
+-----
+home_content_bjg
+C to V translator
+-----
+home_content_bjh
+This tool can already translate entire original DOOM. C++ support is planned as well. It does full automatic conversion to human readable code.
+-----
+home_content_bji
+V UI
+-----
+home_content_bjj
+Cross-platform widget toolkit.
+-----
+home_content_caa
+Open-source light and fast alternative to GitHub/GitLab.
+-----
+home_content_cab
+Gitly screenshot
+-----
+home_content_cac
+Vorum
+-----
+home_content_cad
+Right now it's very basic forum/blogging software, but in the future it will be a full featured light alternative to Discourse.
+-----
+home_content_cae
+The V forum runs on Vorum.
+-----
+home_content_caf
+vgram
+-----
+home_content_cag
+A bot library for Telegram Bot API.
+-----
+home_content_cah
+Awesome V
+-----
+home_content_cai
+A curated list of awesome V frameworks, libraries and software
+-----
+home_content_caj
+The V Tensor Library
+-----
+home_content_cba
+An n-dimensional Tensor data structure, sophisticated reduction, elementwise, and accumulation operations, data Structures that can easily be passed to C libraries, powerful linear algebra routines backed by VSL.
+-----
+home_content_cbb
+The V Scientific Library
+-----
+home_content_cbc
+A Scientific Library with a great variety of different modules.
+-----
+home_content_cbd
+Lilly
+-----
+home_content_cbe
+A VIM-Like editor for your terminal
+-----
+home_content_cbf
+Lilly screenshot
+-----
+home_content_cbg
+V GUI
+-----
+home_content_cbh
+An immediate mode UI framework for V.
+-----
+home_content_cbi
+V GUI screenshot
+-----
+home_content_cbj
+Are you using V to build your product or library?
+-----
+home_content_cca
+Have it added to this list.
+-----
+home_content_ccb
+The latest from V
+-----
+home_content_ccc
+Always moving forward.
+-----
+home_content_ccd
+Previous news
+-----
+home_content_cce
+Next news
+-----
+home_content_ccf
+Latest news & blog posts
+-----
+home_content_ccg
+V 1.0 roadmap
+-----
+home_content_cch
+News
+-----
+home_content_cci
+Jul 12, 2026
+-----
+home_content_ccj
+V 0.5.2 is out!
+-----
+home_content_cda
+Mar 9, 2026
+-----
+home_content_cdb
+V 0.5.1 is out!
+-----
+home_content_cdc
+Dec 31, 2025
+-----
+home_content_cdd
+V 0.5 is out! 3700 (!) fixes since V 0.4.
+-----
+home_content_cde
+Sep 19, 2025
+-----
+home_content_cdf
+V 0.4.12 is out!
+-----
+home_content_cdg
+Jun 19, 2025
+-----
+home_content_cdh
+V 0.4.11 is out!
+-----
+home_content_cdi
+Mar 20, 2025
+-----
+home_content_cdj
+V 0.4.10 is out!
+-----
+home_content_cea
+Dec 22, 2024
+-----
+home_content_ceb
+V 0.4.9 is out!
+-----
+home_content_cec
+Sep 28, 2024
+-----
+home_content_ced
+V 0.4.8 is out!
+-----
+home_content_cee
+Jul 26, 2024
+-----
+home_content_cef
+V 0.4.7 is out!
+-----
+home_content_ceg
+May 20, 2024
+-----
+home_content_ceh
+V 0.4.6 is out!
+-----
+home_content_cei
+Mar 20, 2024
+-----
+home_content_cej
+V 0.4.5 is out!
+-----
+home_content_cfa
+Jan 9, 2024
+-----
+home_content_cfb
+V 0.4.4 is out!
+-----
+home_content_cfc
+Nov 11, 2023
+-----
+home_content_cfd
+V 0.4.3 is out!
+-----
+home_content_cfe
+Sep 30, 2023
+-----
+home_content_cff
+V 0.4.2 is out!
+-----
+home_content_cfg
+Sep 3, 2023
+-----
+home_content_cfh
+V 0.4.1 is out!
+-----
+home_content_cfi
+July 1, 2023
+-----
+home_content_cfj
+V 0.4 is out!
+-----
+home_content_cga
+June 29, 2023
+-----
+home_content_cgb
+V 0.3.5 is out!
+-----
+home_content_cgc
+April 30, 2023
+-----
+home_content_cgd
+V 0.3.4 is out!
+-----
+home_content_cge
+April 17, 2023
+-----
+home_content_cgf
+Getting Started with V
+-----
+home_content_cgg
+January 30, 2023
+-----
+home_content_cgh
+V 0.3.3 is out!
+-----
+home_content_cgi
+October 31, 2022
+-----
+home_content_cgj
+V 0.3.2 is out!
+-----
+home_content_cha
+August 31, 2022
+-----
+home_content_chb
+V 0.3.1 is out!
+-----
+home_content_chc
+June 30, 2022
+-----
+home_content_chd
+V 0.3 is out!
+-----
+home_content_che
+June 22, 2022
+-----
+home_content_chf
+C2V is out! Demo video:
+-----
+home_content_chg
+translating DOOM from C to V, building it under a second and running it!
+-----
+home_content_chh
+June 10, 2022
+-----
+home_content_chi
+V has appeared on
+-----
+home_content_chj
+RedMonk Q122 Programming Language Rankings
+-----
+home_content_cia
+June 9, 2022
+-----
+home_content_cib
+As of today, programs built with the V compiler no longer leak memory by default.
+-----
+home_content_cic
+May 29, 2022
+-----
+home_content_cid
+7000 pull requests have been merged!
+-----
+home_content_cie
+Made for people who love to build
+-----
+home_content_cif
+In good company.
+-----
+home_content_cig
+Previous reviews
+-----
+home_content_cih
+Next reviews
+-----
+home_content_cii
+Reviews
+-----
+home_content_cij
+I just stumbled into V the other day, and I've been working on a couple of personal projects. I'm really loving it so far. I spent a lot of time with Go, so it feels super familiar. That said, I actually have a module I made last night for interacting with MeshCore. I've not had this much fun programming in a long while.
+-----
+home_content_cja
+CptnDuras
+-----
+home_content_cjb
+The V development team does an amazing job. I've never seen a language evolve that fast; I suspect you guys never sleep. I hope V will remain a simple, clean language and have a bright future. Thanks for all your hard work.
+-----
+home_content_cjc
+BrunoVDR
+-----
+home_content_cjd
+I like V a lot. The abstraction over the syntax is so nice that made me enjoy writing the syntax as a whole. V has come a lot further than when I tried it in 2023. I’ll be actively using it from now on.
+-----
+home_content_cje
+Kris Tun
+-----
+home_content_cjf
+I'm mostly surprised by how many things "just work". Channels and closures made implementing asynchronous callbacks for C functions such a breeze. Thanks for that! 😄
+-----
+home_content_cjg
+Joel L.
+-----
+home_content_cjh
+V is the most comfortable syntax I've encountered, so I look forward to 1.0.
+-----
+home_content_cji
+hellolio
+-----
+home_content_cjj
+Been programming for around 30 years. Have done some C/C++, VB, and lots of Delphi years ago. Then PHP/Ruby for over 15 years. Bash, Python too. Recently I've wanted to start using a compiled language for reasons, and have looked at Rust, Go, and a couple others. I stumbled upon V a few weeks ago and have been very surprised by how easy it is to pick up. I am really enjoying writing V and feel like I am already productive. Even to the point I'm now looking at making a small ...
+-----
+home_content_daa
+FlibbyJibbit
+-----
+home_content_dab
+Really like the direction of V, been wondering when this kind of language would pop up.
+-----
+home_content_dac
+pbarker
+-----
+home_content_dad
+V is amazing. Things I like about it:
+-----
+home_content_dae
+Flexibility for operator overloading. (it makes syntax intuitive)
+-----
+home_content_daf
+Compiles directly to C, and I love C
+-----
+home_content_dag
+Flexibility for having and not having garbage collection
+-----
+home_content_dah
+Go concurrency model
+-----
+home_content_dai
+visrut
+-----
+home_content_daj
+I come from a strong Java and Go background and have been playing with Rust. V looks pretty amazing in terms of readability.
+-----
+home_content_dba
+Hoss
+-----
+home_content_dbb
+V is amazingly simple!
+-----
+home_content_dbc
+devsou.com
+-----
+home_content_dbd
+I buy my son's diaper with C#, but every project I start today is in V. Because every project in C# has an initial load of bureaucracy that in V I don't have to deal with at the beginning, and I can plug bureaucracy into the project throughout the creation process.
+-----
+home_content_dbe
+André L.
+-----
+home_content_dbf
+It's so much damn fun to program in it!
+-----
+home_content_dbg
+mrw
+-----
+home_content_dbh
+Gotta say that V's syntax is amazing (especially the error handling aspect for me since I strongly dislike Go's error handling approach but liked its other aspects).
+-----
+home_content_dbi
+Teddy
+-----
+home_content_dbj
+After V, developing a kernel in C results in more bugs, honestly more so because V catches a set of bugs and memory leakage that C simply doesn't.
+-----
+home_content_dca
+mint, maintainer of Vinix
+-----
+home_content_dcb
+Just want to say thank you for continuing to improve the language. Adding the GC was very nice and I find V my all-time favorite language. Using V is fun due to great syntax and tooling but also makes you a better developer as you try to understand how things work underneath.
+-----
+home_content_dcc
+laotzu
+-----
+home_content_dcd
+Just wanted to say thank you to everyone contributing to V! Before September 2023 I never really coded nor completed any project as the tools I had were less than ideal. In September I started learning V and now I have a really good prototype and a professional developer even reached out to me saying my code was really good! That's why I wanted to thank V and all the contributors 🥰
+-----
+home_content_dce
+Sh.a D'eau
+-----
+home_content_dcf
+It's obvious that Alex was able to bring his experience of many other languages to V, giving the language a very solid foundation. It's difficult for me to list all the positive qualities I like about V because I'm sure I'll forget some. I'll try it anyway.
+-----
+home_content_dcg
+compilation speed
+-----
+home_content_dch
+simplicity (only a few keywords), yet powerful
+-----
+home_content_dci
+readability & maintainability
+-----
+home_content_dcj
+execution performance
+-----
+home_content_dda
+cross compilation ...
+-----
+home_content_ddb
+InspColumbo
+-----
+home_content_ddc
+Thanks to everyone who contributed to this project. The simplicity of language and the fact that it's compiled makes it number 1 where applicable.
+-----
+home_content_ddd
+TenTypekMatus
+-----
+home_content_dde
+I think you do not get enough credit for the amazing language V is. Thank you for your time and effort.
+-----
+home_content_ddf
+mihaigalos
+-----
+home_content_ddg
+When I stumbled across V, it just 'felt right'.
+-----
+home_content_ddh
+chris_debian
+-----
+home_content_ddi
+Thank you very much to everyone contributing to V! It's been 1.5 years since I've discovered it. I really enjoy the kind and helping community, the simplicity philosophy and lots of other things. I was pleasantly surprised by the easiness of creating an HTTP server: just a few lines and then handling the request is very easy by following the example. A big thank you from the bottom of my heart ❤️
+-----
+home_content_ddj
+nopana
+-----
+home_content_dea
+V is the better Go. I use V in production for my personal projects. It is such a joy to use.
+-----
+home_content_deb
+dovh49
+-----
+home_content_dec
+I mastered Python when I worked as a Data Scientist a few years ago. Since I discovered V I stopped using Python almost entirely, and now I look back and... it's awful. Never had so much fun programming as I am now.
+-----
+home_content_ded
+rodabt
+-----
+home_content_dee
+V is seriously impressive. After years of Go development, V brings the simplicity I love, but with true low-level control and raw speed — exactly what I’ve been missing. Looking forward digging deeper with this tech, just started ❤️
+-----
+home_content_def
+BadassBrah
+-----
+home_js_language_error
+Could not change the language. Please try again.
+-----
+home_js_resume_demos
+Resume automatic demos
+-----
+home_js_pause_demos
+Pause automatic demos
+-----
+home_js_doom_video_title
+Translating DOOM from C to V — full demonstration
+-----
+home_js_recording_label
+Original V compiler rebuild recording on macOS
+-----
+home_js_english
+English
+-----
+home_js_copied
+Copied ✓
+-----
+home_js_copied_status
+Copied to clipboard.
+-----
+home_js_select_copy
+Select & copy
+-----
+home_js_clipboard_error
+Clipboard is unavailable. The code is selected; press Command-C or Control-C to copy.
+-----
+home_index_agg
+V UI2 Studio WYSIWYG editor for designing an application interface
+-----
+home_index_agh
+Native GUI · WYSIWYG editor
+-----
+home_index_agi
+Design it visually.
+-----
+home_index_agj
+Build it with V.
+-----
+home_index_aha
+V UI is a native UI library with a WYSIWYG editor for designing forms visually, then building them in V.
+-----
+home_index_ahb
+Explore V UI ↗
+-----
+home_index_ahc
+V UI visual editor
