@@ -130,10 +130,10 @@ time ./v self</code></pre>
         id="demo-doom"
         role="tabpanel"
         aria-labelledby="tab-doom"
-        data-duration="16000"
+        data-duration="22000"
         hidden
       >
-        <div class="media-scene demo-native-scene">
+        <div class="media-scene demo-translation-scene">
           <div class="demo-media doom-media">
             <img
               src="/img/doom.png"
@@ -155,6 +155,19 @@ time ./v self</code></pre>
             <p>
               %home_index_aci
             </p>
+            <p>%home_content_ajd</p>
+            <div class="translation-snippets" aria-label="%home_content_ajc">
+              <pre><code>v translate file.c
+
+std::vector&lt;std::string&gt; s;
+s.push_back("V is ");
+s.push_back("awesome");
+std::cout &lt;&lt; s.size();</code></pre>
+              <pre><code>mut s := []
+s &lt;&lt; 'V is '
+s &lt;&lt; 'awesome'
+println(s.len)</code></pre>
+            </div>
             <p>
               %home_index_acj
               <a
@@ -164,6 +177,16 @@ time ./v self</code></pre>
                 >%home_index_ada</a
               >
             </p>
+            <p class="translation-reference">
+              %home_content_aje
+              <a
+                href="https://github.com/vlang/v/tree/master/tutorials/C2V_translating_simple_programs_and_DOOM"
+                rel="noopener noreferrer"
+                target="_blank"
+                >%home_content_ajf</a
+              >%home_content_ajg
+            </p>
+            <p class="translation-reference"><i>%home_content_ajh</i></p>
           </div>
         </div>
       </article>
@@ -444,8 +467,6 @@ time ./v self</code></pre>
 @include 'templates/content.html'
 
 @include 'templates/resources.html'
-
-@include 'templates/sponsors.html'
 </main>
 
 @include 'templates/footer.html'

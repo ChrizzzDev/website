@@ -1000,6 +1000,28 @@ li code {
 .media-caption .text-link {
   font-size: 11px;
 }
+.translation-snippets {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0;
+}
+.translation-snippets pre {
+  margin: 0;
+  padding: 9px 10px;
+  overflow: hidden;
+  border: 1px solid #344051;
+  border-radius: 6px;
+  background: #111925;
+  color: #aebed1;
+  font-family: var(--mono);
+  font-size: 8px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+.translation-reference {
+  font-size: 10px !important;
+}
 .demo-command {
   display: block;
   font-size: 11px;
@@ -2342,6 +2364,31 @@ li code {
   }
   .demo-ui-scene .media-caption .text-link + .text-link {
     margin-left: 12px;
+  }
+  .demo-translation-scene {
+    justify-content: flex-start;
+    gap: 9px;
+  }
+  .demo-translation-scene .demo-media {
+    width: min(100%, 170px);
+  }
+  .demo-translation-scene .media-caption .eyebrow {
+    margin-bottom: 4px;
+  }
+  .demo-translation-scene .media-caption > p:not(.eyebrow) {
+    margin: 6px 0;
+  }
+  .translation-snippets {
+    gap: 5px;
+    margin: 7px 0;
+  }
+  .translation-snippets pre {
+    padding: 6px 7px;
+    font-size: 7px;
+    line-height: 1.4;
+  }
+  .translation-reference {
+    font-size: 9px !important;
   }
   .demo-command {
     font-size: 10px;
