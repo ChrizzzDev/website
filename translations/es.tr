@@ -397,7 +397,7 @@ home_index_aei
 Compilación de una aplicación para Windows desde otro sistema operativo
 -----
 home_index_aej
-Un lenguaje. Múltiples destinos.
+Un código. Múltiples destinos.
 -----
 home_index_afa
 Compila aquí.
@@ -406,7 +406,7 @@ home_index_afb
 Ejecuta allá.
 -----
 home_index_afc
-Realiza compilación cruzada de aplicaciones nativas para cualquier sistema operativo. Sin depender de herramientas externas.
+Compila aplicaciones nativas para otros sistemas operativos sin depender de herramientas externas.
 -----
 home_index_afd
 Descubre la compilación cruzada ↗
@@ -808,7 +808,7 @@ home_content_afi
 Compilador pequeño y fácil de construir
 -----
 home_content_afj
-V puede arrancarse desde cero en menos de un segundo compilando su código traducido a C con un sencillo comando:
+V puede compilarse a sí mismo en menos de un segundo al compilar su código traducido a C con un simple comando:
 -----
 home_content_aga
 No requiere bibliotecas ni dependencias.
